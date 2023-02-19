@@ -46,12 +46,15 @@ public class Player extends Entity{
 			y -= speed;
 
 
-		} else if (KeyHandler.down == true) {
+		}
+		if (KeyHandler.down == true) {
 			y += speed;
 
-		} else if (KeyHandler.right == true) {
+		}
+		if (KeyHandler.right == true) {
 			x += speed;
-		} else if (KeyHandler.left == true) {
+		}
+		if (KeyHandler.left == true) {
 			x -= speed;
 		}
 
