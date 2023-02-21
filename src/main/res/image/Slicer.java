@@ -1,4 +1,4 @@
-package resources.image;
+package main.res.image;
 
 import java.util.Scanner;
 
