@@ -1,6 +1,7 @@
 package main;
 
 import main.Entity.Player;
+import main.blocks.Blocks;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,6 +30,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 
 	Player player = new Player(this, keyHandler);
+	Blocks blocks = new Blocks(this, keyHandler);
 
 	int playerX = 100;
 	int playerY = 100;
