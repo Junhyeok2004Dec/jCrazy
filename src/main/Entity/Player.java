@@ -103,17 +103,19 @@ public class Player extends Entity{
 		if(SpriteCount > 24) {
 
 
+			if (KeyHandler.left || KeyHandler.right || KeyHandler.up || KeyHandler.down) {
 
-			if (SpriteNumber==1) {
-				SpriteNumber = 2;
-			} else if (SpriteNumber == 2) {
-				SpriteNumber = 1;
+				if (SpriteNumber == 1) {
+					SpriteNumber = 2;
+				} else if (SpriteNumber == 2) {
+					SpriteNumber = 1;
+				}
+
+
+
+				SpriteCount = 0;
 			}
-
-
-			SpriteCount = 0;
 		}
-
 
 
 	}
