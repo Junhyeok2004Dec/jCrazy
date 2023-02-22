@@ -107,7 +107,7 @@ public class Slicer extends JFrame {
 	void load(){
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setDialogTitle("파일 불러오기");
-		fileChooser.setFileFilter(new FileNameExtensionFilter("png File", "raw")); // 파일필터
+		fileChooser.setFileFilter(new FileNameExtensionFilter("png File", "png")); // 파일필터
 		fileChooser.setMultiSelectionEnabled(false);// 다중 선택 불가
 		int returnVal = fileChooser.showOpenDialog(this); // show openDialog
 		if (returnVal == JFileChooser.APPROVE_OPTION) { // 파일을 선택하였을 때

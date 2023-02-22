@@ -2,28 +2,33 @@ package main;
 
 import main.Entity.Player;
 import main.blocks.Block;
+import main.blocks.BlockManager;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable{
 
-	public final int rootTileScale = 16;
+	public final int rootTileScale = 32;
 	public final int sizeFactor = 3;
 
 	public final int tileSize = rootTileScale * sizeFactor;
-	final int maxScreenColumn =  16;
-	final int maxScreenRow = 12;
+	public final int maxScreenColumn =  16;
+	public final int maxScreenRow = 12;
 
+
+	public final int screenMultiX = 1;
+	public final int screenMultiY = 1;
 
 	public int getTileSize() {
 		return this.tileSize;
 	}
 
-	final int screenWidth = tileSize * maxScreenColumn;
-	final int screenHeight = tileSize * maxScreenRow;
+	public final int screenWidth = screenMultiX* tileSize * maxScreenColumn;
+	public final int screenHeight = screenMultiY * tileSize * maxScreenRow;
 
 
+	BlockManager blockManager = new BlockManager(this);
 
 	KeyHandler keyHandler = new KeyHandler();
 	Thread gameThread;
@@ -37,6 +42,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 
 	int fps = 240;
+
 
 
 	public GamePanel() {
@@ -118,6 +124,7 @@ public class GamePanel extends JPanel implements Runnable{
 		Graphics2D g2d = (Graphics2D) g;
 
 		player.draw(g2d);
+		blockManager.draw(g2d);
 
 
 		g2d.dispose();
