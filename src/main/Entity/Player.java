@@ -16,7 +16,7 @@ public class Player extends Entity{
 
 
 
-	public BufferedImage up1, up2, down1, down2, right1, right2, left1, left2;
+	public BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2;
 	public String direction;
 
 
@@ -32,6 +32,9 @@ public class Player extends Entity{
 			right2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/right_2.png"));
 			down1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/down_1.png"));
 			down2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/down_2.png"));
+			idle1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_front.png"));
+			idle2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_shift.png"));
+
 
 
 
@@ -105,6 +108,7 @@ public class Player extends Entity{
 
 			if (KeyHandler.left || KeyHandler.right || KeyHandler.up || KeyHandler.down) {
 
+				isIdle = false;
 				if (SpriteNumber == 1) {
 					SpriteNumber = 2;
 				} else if (SpriteNumber == 2) {
@@ -116,6 +120,10 @@ public class Player extends Entity{
 				SpriteCount = 0;
 			}
 		}
+
+
+
+
 
 
 	}
@@ -167,6 +175,32 @@ public class Player extends Entity{
 					image = right2;
 				}
 				break;
+		}
+
+		if(isIdle) {
+
+			int idlecount = 0;
+
+			if(isIdle) {
+				idlecount++;
+
+				if(idlecount > 32) {
+
+					if((image == down2)||(image == down1)) {
+						image = idle1;
+					}
+
+					if(image == idle1) {
+						image = idle2;
+					} else if (image == idle2) {
+						image = idle1;
+					}
+
+
+				}
+
+			}
+
 		}
 
 		gp.drawImage(image, x, y, this.gp.tileSize, this.gp.tileSize, null);

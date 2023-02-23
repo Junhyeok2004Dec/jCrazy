@@ -9,6 +9,10 @@ import java.awt.*;
 
 public class GamePanel extends JPanel implements Runnable{
 
+
+	public int asdf = 0;
+	//mapgen 일회실행
+
 	public final int rootTileScale = 32;
 	public final int sizeFactor = 3;
 
@@ -122,9 +126,11 @@ public class GamePanel extends JPanel implements Runnable{
 		super.paintComponent(g);
 
 		Graphics2D g2d = (Graphics2D) g;
-
-		player.draw(g2d);
 		blockManager.draw(g2d);
+		blockManager.mapgen(g2d);
+		player.draw(g2d);
+
+
 
 
 		g2d.dispose();

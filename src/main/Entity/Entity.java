@@ -9,6 +9,9 @@ public class Entity {
 
 
 	public int SpriteNumber = 1;
+	public boolean isIdle = false;
+
+
 	public int SpriteCount = 0;
 
 
