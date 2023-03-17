@@ -6,6 +6,7 @@ import main.GamePanel;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class BlockManager implements Data {
 
@@ -14,12 +15,16 @@ public class BlockManager implements Data {
 
 	WorldGen wgen = new WorldGen();
 
+	Type type = new Type();
+
 
 	public BlockManager(GamePanel gp) {
 		this.gamePanel = gp;
 
 		block = new Block[8];
 		getBlockImage();
+
+
 	}
 
 
@@ -29,6 +34,9 @@ public class BlockManager implements Data {
 
 
 		try {
+
+
+			block[0] = new Block(0, "돌", type.getTypes());
 
 			block[0] = new Block();
 			block[0].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
