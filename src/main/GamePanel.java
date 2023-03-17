@@ -13,6 +13,9 @@ public class GamePanel extends JPanel implements Runnable{
 	public int asdf = 0;
 	//mapgen 일회실행
 
+
+	public static final int playerInventoryX = 12;
+	public static final int playerInventoryY = 3;
 	public final int rootTileScale = 32;
 	public final int sizeFactor = 3;
 

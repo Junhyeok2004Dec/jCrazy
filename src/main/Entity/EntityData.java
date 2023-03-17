@@ -1,8 +1,6 @@
 package main.Entity;
 
-import main.Component;
-import main.GameObject;
-import main.Item;
+import main.item.Item;
 
 import java.util.ArrayList;
 
