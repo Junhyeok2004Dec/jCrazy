@@ -3,18 +3,29 @@ package main.item;
 import main.GamePanel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Inventory {
 
 	private ArrayList<Item> items;
-	private ArrayList<ArrayList<Item>> itemsArrays;
+	private Item[][] itemsArrays;
 
 	private int number;
 
 
 	public void playerInventory(int width, int height) {
 		this.items = new ArrayList<>();
-		this.itemsArrays = new ArrayList<>();
+
+
+		HashMap<Integer, String> map = new HashMap<>();
+		map.put(1,"none");
+		for(int i = 0; i < width * height; i++) {
+			this.items.add(new Item("air", map));
+		}
+		this.itemsArrays = new Item[width][height];
+
+
 	}
 
 	public void addItem(Item item) {
@@ -34,8 +45,8 @@ public class Inventory {
 
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
-				this.itemsArrays.get(i).set(j, this.items.get(i*j));
-				System.out.println(i+"줄" + j+"칸" + this.items.get(i*j).toString() + "생성");
+				this.itemsArrays[j][i] =  this.items.get(i*j);
+				System.out.println(j+"줄" + i+"칸" + this.items.get(i*j).toString() + "생성");
 			}
 		}
 	}
