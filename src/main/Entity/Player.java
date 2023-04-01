@@ -13,6 +13,7 @@ public class Player extends Entity{
 
 	GamePanel gp;
 	KeyHandler kh1;
+	PlayerInventory inventory;
 
 
 
@@ -53,7 +54,9 @@ public class Player extends Entity{
 
 		this.gp = gp;
 		this.kh1 = kh1;
+		this.inventory = new Inventory();
 		this.init();
+
 		getPlayerImage();
 	}
 

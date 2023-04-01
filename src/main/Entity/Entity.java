@@ -1,10 +1,5 @@
 package main.Entity;
 
-import main.GameObject;
-import main.item.Inventory;
-
-import java.util.ArrayList;
-
 public class Entity {
 
 	public int x,y;
@@ -14,7 +9,6 @@ public class Entity {
 	public Inventory inventory;
 
 	public Entity() {
-		inventory.playerInventory(12, 3);
 	}
 
 

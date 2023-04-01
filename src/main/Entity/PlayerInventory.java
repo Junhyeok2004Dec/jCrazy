@@ -1,20 +1,19 @@
-package main.item;
+package main.Entity;
 
 import main.GamePanel;
+import main.item.Item;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
-public class Inventory {
+public class PlayerInventory extends Inventory{
 
-	private ArrayList<Item> items;
 	private Item[][] itemsArrays;
-
-	private int number;
-
-
+	private ArrayList<Item> items;
 	public void playerInventory(int width, int height) {
+
+
 		this.items = new ArrayList<>();
 
 
@@ -28,10 +27,7 @@ public class Inventory {
 
 	}
 
-	public void addItem(Item item) {
-		this.items.add(item);
 
-	}
 
 
 	/**
