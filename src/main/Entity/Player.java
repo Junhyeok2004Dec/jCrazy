@@ -37,10 +37,10 @@ public class Player extends Entity{
 			idle1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_front.png"));
 			idle2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_shift.png"));
 			heart = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/heart.png"));
-			bkh1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_1"));
-			bkh2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_2"));
-			bkh3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_3"));
-			halfheart = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/heart_half"));
+			bkh1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_1.png"));
+			bkh2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_2.png"));
+			bkh3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_3.png"));
+			halfheart = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/heart_half.png"));
 
 
 
@@ -131,7 +131,10 @@ public class Player extends Entity{
 				SpriteCount = 0;
 			}
 
-			if (KeyHandler.)
+			if (KeyHandler.suicide) {
+				this.setHp(0);
+
+			}
 		}
 
 
@@ -144,6 +147,7 @@ public class Player extends Entity{
 	public void draw(Graphics2D gp) {
 		
 		BufferedImage image = null;
+
 
 
 		switch(direction)
@@ -217,5 +221,14 @@ public class Player extends Entity{
 		}
 
 		gp.drawImage(image, x, y, this.gp.tileSize, this.gp.tileSize, null);
+
+		for(int i = 0; this.hp <= i; i = i+2) {
+
+			gp.drawImage(heart, this.gp.tileSize + i, 0, this.gp.tileSize, this.gp.tileSize, null);
+
+
+		}
+
+
 	}
 }
