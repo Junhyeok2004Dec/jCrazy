@@ -2,6 +2,7 @@ package main.Entity;
 
 import main.GamePanel;
 import main.KeyHandler;
+import main.util.Text;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -159,12 +160,11 @@ public class Player extends Entity{
 
 
 	}
-
+	Text text = new Text();
 	public void draw(Graphics2D gp) {
 		
 		BufferedImage image = null;
-
-
+		text.setText(String.valueOf(this.hp), 0, this.gp.screenHeight/2);
 
 		switch(direction)
 
@@ -210,6 +210,9 @@ public class Player extends Entity{
 				break;
 		}
 
+
+
+
 		if(isIdle) {
 
 			int idlecount = 0;
@@ -234,11 +237,21 @@ public class Player extends Entity{
 
 			}
 
+
+
 		}
+
+
+
+
 
 		gp.drawImage(image, x, y, this.gp.tileSize, this.gp.tileSize, null);
 
 
+
+
+
+		//Health 코드 정리예정.
 		if(!(this.hp == 0)) {
 
 

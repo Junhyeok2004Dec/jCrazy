@@ -3,6 +3,7 @@ package main;
 import main.Entity.Player;
 import main.blocks.Block;
 import main.blocks.BlockManager;
+import main.util.Text;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,6 +43,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 
 	Player player = new Player(this, keyHandler);
+	Text text = new Text();
 
 	int playerX = 100;
 	int playerY = 100;
@@ -132,6 +134,7 @@ public class GamePanel extends JPanel implements Runnable{
 		blockManager.draw(g2d);
 		blockManager.mapgen(g2d);
 		player.draw(g2d);
+		text.draw(g2d);
 
 
 		g2d.dispose();
