@@ -224,7 +224,7 @@ public class Player extends Entity{
 
 		for(int i = 0; this.hp <= i; i = i+2) {
 
-			gp.drawImage(heart, this.gp.tileSize + i, 0, this.gp.tileSize, this.gp.tileSize, null);
+			gp.drawImage(heart, x, y, this.gp.tileSize, this.gp.tileSize, null);
 
 
 		}
