@@ -20,6 +20,7 @@ public class Type {
 
 		types.add("Breakable");
 		types.add("Unbreakable");
+		types.add("unAccessible");
 
 		types.add(materials);
 
@@ -29,7 +30,7 @@ public class Type {
 
 
 	public ArrayList<Object> getTypes() {
-		return types;
+		return this.types;
 	}
 
 	public ArrayList<String> getMaterials() {

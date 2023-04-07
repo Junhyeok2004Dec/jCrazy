@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 public class KeyHandler implements KeyListener {
 
 
-	public static boolean up, down, right, left, suicide;
+	public static boolean up, down, right, left, suicide, add, subtract;
 
 	/**
 	 * Invoked when a key has been typed.
@@ -49,6 +49,13 @@ public class KeyHandler implements KeyListener {
 			case KeyEvent.VK_ESCAPE:
 				suicide = true;
 				break;
+			case KeyEvent.VK_UP:
+				add = true;
+				break;
+			case KeyEvent.VK_DOWN:
+				subtract = true;
+				break;
+
 
 			default:
 				break;
@@ -83,6 +90,12 @@ public class KeyHandler implements KeyListener {
 				break;
 			case KeyEvent.VK_ESCAPE:
 				suicide = false;
+				break;
+			case KeyEvent.VK_UP:
+				add = false;
+				break;
+			case KeyEvent.VK_DOWN:
+				subtract = false;
 				break;
 
 			default:

@@ -37,13 +37,11 @@ public class BlockManager implements Data {
 
 
 			block[0] = new Block(0, "돌", type.getTypes());
-
-			block[0] = new Block();
 			block[0].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
 
 
 
-			block[1] = new Block();
+			block[1] = new Block(1,"시멘트벽돌", type.getTypes());
 			block[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/brick1.png"));
 
 

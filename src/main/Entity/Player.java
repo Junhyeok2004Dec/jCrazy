@@ -80,6 +80,8 @@ public class Player extends Entity{
 
 	}
 
+	public int count = 0;
+
 	public void update() {
 
 
@@ -111,7 +113,21 @@ public class Player extends Entity{
 			x -= speed;
 		}
 
+
 		SpriteCount++;
+
+		count++;
+
+		if(count > 24) {
+			if (KeyHandler.subtract== true) {
+				this.hp--;
+			}
+			if (KeyHandler.add == true) {
+				this.hp++;
+			}
+
+			count = 0;
+		}
 
 		if(SpriteCount > 24) {
 
@@ -223,10 +239,18 @@ public class Player extends Entity{
 		gp.drawImage(image, x, y, this.gp.tileSize, this.gp.tileSize, null);
 
 
-		if(!(hp == 0)) {
-			for (int i = 0; i < this.hp; i++) {
-				gp.drawImage(heart, i * this.gp.tileSize / 4,0,this.gp.tileSize / 4, this.gp.tileSize / 4, null);
-			}
+		if(!(this.hp == 0)) {
+
+
+
+			for (int i = 0; i < this.hp; i += 2) {
+				gp.drawImage(heart, i * this.gp.tileSize / 4,0,this.gp.tileSize / 2, this.gp.tileSize / 2, null);
+
+		}}
+
+		if((this.hp%2) == 1) {
+			gp.drawImage(halfheart, this.hp * this.gp.tileSize / 4 - 24,0,this.gp.tileSize / 2, this.gp.tileSize / 2, null);
+
 		}
 
 
