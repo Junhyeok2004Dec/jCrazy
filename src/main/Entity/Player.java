@@ -17,9 +17,8 @@ public class Player extends Entity{
 
 
 
+	public BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2, heart, halfheart, bkh1,bkh2,bkh3;
 
-
-	public BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2;
 	public String direction;
 
 
@@ -37,6 +36,12 @@ public class Player extends Entity{
 			down2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/down_2.png"));
 			idle1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_front.png"));
 			idle2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_shift.png"));
+			heart = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/heart.png"));
+			bkh1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_1"));
+			bkh2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_2"));
+			bkh3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_3"));
+			halfheart = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/heart_half"));
+
 
 
 
@@ -54,8 +59,9 @@ public class Player extends Entity{
 
 		this.gp = gp;
 		this.kh1 = kh1;
-		this.inventory = new Inventory();
+		this.inventory = new PlayerInventory();
 		this.init();
+		this.setHp(20);
 
 		getPlayerImage();
 	}
@@ -109,6 +115,7 @@ public class Player extends Entity{
 
 		if(SpriteCount > 24) {
 
+			System.out.println(this.hp);
 
 			if (KeyHandler.left || KeyHandler.right || KeyHandler.up || KeyHandler.down) {
 
@@ -123,6 +130,8 @@ public class Player extends Entity{
 
 				SpriteCount = 0;
 			}
+
+			if (KeyHandler.)
 		}
 
 
