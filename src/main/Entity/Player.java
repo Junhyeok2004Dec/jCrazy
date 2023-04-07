@@ -61,7 +61,7 @@ public class Player extends Entity{
 		this.kh1 = kh1;
 		this.inventory = new PlayerInventory();
 		this.init();
-		this.setHp(20);
+		this.setHp(26);
 
 		getPlayerImage();
 	}
@@ -222,12 +222,13 @@ public class Player extends Entity{
 
 		gp.drawImage(image, x, y, this.gp.tileSize, this.gp.tileSize, null);
 
-		for(int i = 0; this.hp <= i; i = i+2) {
 
-			gp.drawImage(heart, x, y, this.gp.tileSize, this.gp.tileSize, null);
-
-
+		if(!(hp == 0)) {
+			for (int i = 0; i < this.hp; i++) {
+				gp.drawImage(heart, i * this.gp.tileSize / 4,0,this.gp.tileSize / 4, this.gp.tileSize / 4, null);
+			}
 		}
+
 
 
 	}
