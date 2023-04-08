@@ -1,8 +1,12 @@
 package main.Entity;
 
+import main.DefaultObject;
+
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Vector;
 
-public class Entity {
+public class Entity extends DefaultObject {
 
 	public int x,y;
 	public int speed;
@@ -38,6 +42,9 @@ public class Entity {
 		this.y = position.get(1);
 	}
 
+	public Vector<Integer> getPos() {
+		return new Vector<>(Arrays.asList(this.x, this.y));
+	}
 
 	public void setInfo(Vector<Integer> info) {
 		this.hp = info.get(0);

@@ -161,6 +161,7 @@ public class Player extends Entity{
 
 	}
 	Text text = new Text();
+
 	public void draw(Graphics2D gp) {
 		
 		BufferedImage image = null;

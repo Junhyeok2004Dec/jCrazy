@@ -1,9 +1,11 @@
 package main.blocks;
 
+import main.DefaultObject;
+
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class Block<T> {
+public class Block<T> extends DefaultObject {
 	private int id;
 	private String name;
 	private ArrayList<T> type = new ArrayList<>();

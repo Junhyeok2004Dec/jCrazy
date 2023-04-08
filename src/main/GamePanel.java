@@ -36,6 +36,10 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int screenHeight = screenMultiY * tileSize * maxScreenRow;
 
 
+	public final int cameraPosX = 0;
+	public final int cameraPosY = 0;
+
+
 	BlockManager blockManager = new BlockManager(this);
 
 	KeyHandler keyHandler = new KeyHandler();
