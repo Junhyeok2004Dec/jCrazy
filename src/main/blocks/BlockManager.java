@@ -103,9 +103,10 @@ public class BlockManager implements Data {
 		}
 
 
-
-
-
+	/**
+	 * 맵 내 블럭 수동조정
+	 * @param g2d
+	 */
 	public void draw(Graphics2D g2d) {
 
 

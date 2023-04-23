@@ -9,7 +9,7 @@ public class Text {
 	GamePanel gamePanel;
 
 
-	public String drawText = "";
+	public String drawText = "123";
 	int x,y;
 
 	public void setText(String text) {
@@ -27,7 +27,12 @@ public class Text {
 
 	public void draw(Graphics2D g2d) {
 
-		g2d.drawString(drawText, x, y);
+		g2d.setRenderingHint(RenderingHints
+				.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+		Font f1 = new Font("Dialog", 0, 21);
+		g2d.setFont(f1);
+		g2d.drawString(drawText, 44, 99);
 	}
 
 
