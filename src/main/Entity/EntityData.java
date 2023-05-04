@@ -4,11 +4,11 @@ import main.item.Item;
 
 import java.util.ArrayList;
 
-public class EntityData{
+public class EntityData {
 
 	private String name;
 	private int hp;
-	private int xp,level,maxXp;
+	private int xp, level, maxXp;
 	private ArrayList<Item> inventory;
 
 	public EntityData() {
@@ -19,9 +19,7 @@ public class EntityData{
 		this.maxXp = 2;
 		this.inventory = new ArrayList<>();
 
-
 	}
-
 
 	/**
 	 * 1 레벨업
@@ -32,8 +30,8 @@ public class EntityData{
 
 	/**
 	 *
-	 * @param amount 만큼 레벨업합니다, 음수도 가능합니다.
-	 *               레벨은 1 이상만 되나(추후 구현예정-매 interval마다 update) 레벨 마이너스는 가능.
+	 * @param amount 만큼 레벨업합니다, 음수도 가능합니다. 레벨은 1 이상만 되나(추후 구현예정-매 interval마다 update)
+	 *               레벨 마이너스는 가능.
 	 */
 	public void levelUp(int amount) {
 		this.level += amount;
