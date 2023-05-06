@@ -24,6 +24,7 @@ public class Player extends Entity{
 
 
 
+
 	public void getPlayerImage() {
 
 		try {
@@ -160,12 +161,21 @@ public class Player extends Entity{
 
 
 	}
+
+
+	// 임시 font , text 설정 코드
+
+	Font f = new Font("Dialog", 1, 30);
 	Text text = new Text();
 
 	public void draw(Graphics2D gp) {
 		
 		BufferedImage image = null;
-		text.setText(String.valueOf(this.hp), 0, this.gp.screenHeight/2);
+
+
+		gp.setFont(f);
+		gp.drawString("HP : " + String.valueOf(this.hp), 100, 100);
+
 
 		switch(direction)
 
@@ -263,7 +273,7 @@ public class Player extends Entity{
 		}}
 
 		if((this.hp%2) == 1) {
-			gp.drawImage(halfheart, this.hp * this.gp.tileSize / 4 - 24,0,this.gp.tileSize / 2, this.gp.tileSize / 2, null);
+			gp.drawImage(halfheart, this.hp * this.gp.tileSize / 4 - 32,0,this.gp.tileSize / 2, this.gp.tileSize / 2, null);
 
 		}
 

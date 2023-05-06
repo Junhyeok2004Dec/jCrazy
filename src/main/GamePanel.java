@@ -17,7 +17,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 	public static final int playerInventoryX = 12;
 	public static final int playerInventoryY = 3;
-	public final int rootTileScale = 32;
+	public final int rootTileScale = 16;
 	public final int sizeFactor = 3;
 
 	public final int tileSize = rootTileScale * sizeFactor;

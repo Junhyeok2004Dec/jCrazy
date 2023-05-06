@@ -22,6 +22,8 @@ public class Text {
 		this.y = y;
 		this.drawText = text;
 
+
+
 	}
 
 
@@ -31,8 +33,13 @@ public class Text {
 				.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 		Font f1 = new Font("Dialog", 0, 21);
+
+
 		g2d.setFont(f1);
 		g2d.drawString(drawText, 44, 99);
+
+
+
 	}
 
 
