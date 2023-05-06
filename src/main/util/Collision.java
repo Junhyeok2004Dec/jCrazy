@@ -10,7 +10,6 @@ public class Collision {
 
 	public void calcDistance() {
 
-
 	}
 
 	public Vector<Integer> getDistance2f(DefaultObject obj) {

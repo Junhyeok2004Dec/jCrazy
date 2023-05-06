@@ -49,6 +49,7 @@ public class GamePanel extends JPanel implements Runnable{
 	Player player = new Player(this, keyHandler);
 	Text text = new Text();
 
+
 	int playerX = 100;
 	int playerY = 100;
 	int playerSpeed = 4;
@@ -132,6 +133,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 	public void paintComponent(Graphics g) {
 
+		
 		super.paintComponent(g);
 
 		Graphics2D g2d = (Graphics2D) g;
