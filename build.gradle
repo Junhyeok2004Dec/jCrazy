@@ -11,6 +11,16 @@ plugins {
 dependencies {
     api 'org.apache.httpcomponents:httpclient:4.5.7'
     implementation 'org.apache.commons:commons-lang3:3.5'
+
+
+    testImplementation(platform("org.junit:junit-bom:5.9.3"))
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher") {
+        because("Only needed to run tests in a version of IntelliJ IDEA that bundles older versions")
+    }
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
+
+
 }
 
 repositories {
@@ -26,4 +36,8 @@ tasks.withType(JavaCompile) {
 }
 javadoc {
     options.encoding = 'UTF-8'
+}
+
+jar {
+    version = '0.0.4'
 }
