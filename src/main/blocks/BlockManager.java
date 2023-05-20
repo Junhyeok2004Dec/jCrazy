@@ -57,6 +57,8 @@ public class BlockManager implements Data {
 			block[4] = new Block();
 			block[4].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
+			block[5] = new Block();
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

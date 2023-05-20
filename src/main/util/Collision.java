@@ -1,6 +1,6 @@
 package main.util;
 
-import main.DefaultObject;
+import main.Entity.Entity;
 
 import java.util.Vector;
 
@@ -12,7 +12,9 @@ public class Collision {
 
 	}
 
-	public Vector<Integer> getDistance2f(DefaultObject obj) {
-		return obj.getPos;
+
+	//entity Collision
+	public Vector<Integer> getDistance2f(Entity entity) {
+		return entity.getPos();
 	}
 }

@@ -1,12 +1,10 @@
 package main.Entity;
 
-import main.DefaultObject;
-
+import java.awt.*;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Vector;
 
-public class Entity extends DefaultObject {
+public class Entity {
 
 	public int x,y;
 	public int speed;
@@ -77,5 +75,12 @@ public class Entity extends DefaultObject {
 
 	public void setSpriteCount(int spriteCount) {
 		SpriteCount = spriteCount;
+	}
+
+
+	public void draw(Graphics2D g) {
+
+
+
 	}
 }
