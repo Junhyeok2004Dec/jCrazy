@@ -1,7 +1,7 @@
 package blocks;
 
 
-import util.GamePanel;
+import main.java.util.GamePanel;
 
 import javax.imageio.ImageIO;
 import javax.xml.crypto.Data;
@@ -77,7 +77,7 @@ public class BlockManager implements Data {
 
 		if(gamePanel.asdf == 0) {
 
-			wgen.Data("src/assets/data/map/map.dat");
+			wgen.Data("src/main/java/data/map/map.dat");
 
 
 			 width = wgen.getWidth();

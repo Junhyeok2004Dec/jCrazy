@@ -1,13 +1,12 @@
-package Entity;
+package main.java.entity;
 
-import util.GamePanel;
 import item.Item;
+import main.java.util.GamePanel;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PlayerInventory extends Inventory{
+public class PlayerInventory extends Inventory {
 
 	private Item[][] itemsArrays;
 	private ArrayList<Item> items;
@@ -34,7 +33,7 @@ public class PlayerInventory extends Inventory{
 	 * 아이템 정렬, 1차원 -> 2차원 정렬기능 구현
 	 */
 	public void setItemsArrays() {
-		int width, height; // playerInventory는 static이고 util.GamePanel 에 선언
+		int width, height; // playerInventory는 static이고 main.java.util.GamePanel 에 선언
 
 		width = GamePanel.playerInventoryX;
 		height = GamePanel.playerInventoryY;

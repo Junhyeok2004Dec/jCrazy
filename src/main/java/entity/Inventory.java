@@ -1,11 +1,9 @@
-package Entity;
+package main.java.entity;
 
-import util.GamePanel;
 import item.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Inventory {
 

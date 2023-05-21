@@ -1,6 +1,6 @@
-package util;
+package main.java.util;
 
-import Entity.Entity;
+import main.java.entity.Entity;
 
 import java.util.Vector;
 

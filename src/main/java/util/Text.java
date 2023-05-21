@@ -1,6 +1,6 @@
 package util;
 
-import util.GamePanel;
+import main.java.util.GamePanel;
 
 import java.awt.*;
 

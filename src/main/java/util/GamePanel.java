@@ -1,6 +1,6 @@
-package util;
+package main.java.util;
 
-import Entity.Player;
+import main.java.entity.Player;
 import blocks.BlockManager;
 
 import javax.swing.*;
@@ -41,12 +41,12 @@ public class GamePanel extends JPanel implements Runnable{
 
 	BlockManager blockManager = new BlockManager(this);
 
-	KeyHandler keyHandler = new KeyHandler();
+	util.KeyHandler keyHandler = new util.KeyHandler();
 	Thread gameThread;
 
 
 	Player player = new Player(this, keyHandler);
-	Text text = new Text();
+	util.Text text = new util.Text();
 
 
 	int playerX = 100;

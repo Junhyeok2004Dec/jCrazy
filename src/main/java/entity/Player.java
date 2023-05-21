@@ -1,16 +1,17 @@
-package Entity;
+package main.java.entity;
 
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.security.Key;
-import util.GamePanel;
+import java.lang.annotation.Target;
+
+import main.java.util.GamePanel;
 import util.KeyHandler;
 import util.Text;
 
-public class Player extends Entity{
+public class Player extends Entity {
 
 	GamePanel gp;
 	KeyHandler kh1;
@@ -27,6 +28,9 @@ public class Player extends Entity{
 	public void getPlayerImage() {
 
 		try {
+
+
+
 			up1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/up_1.png"));
 			up2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/up_2.png"));
 			left1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/left_1.png"));
@@ -162,6 +166,9 @@ public class Player extends Entity{
 	}
 
 	Text text = new Text();
+
+
+
 
 	public void draw(Graphics2D gp) {
 		
