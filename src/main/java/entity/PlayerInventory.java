@@ -1,7 +1,7 @@
-package main.java.entity;
+package entity;
 
 import item.Item;
-import main.java.util.GamePanel;
+import util.GamePanel;
 
 import java.util.ArrayList;
 import java.util.HashMap;

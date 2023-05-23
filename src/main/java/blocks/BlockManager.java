@@ -1,7 +1,7 @@
 package blocks;
 
 
-import main.java.util.GamePanel;
+import util.GamePanel;
 
 import javax.imageio.ImageIO;
 import javax.xml.crypto.Data;
@@ -60,6 +60,7 @@ public class BlockManager implements Data {
 			block[4].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
 			block[5] = new Block();
+			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
 		} catch (IOException e) {
 			e.printStackTrace();

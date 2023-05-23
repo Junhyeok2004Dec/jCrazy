@@ -1,6 +1,6 @@
-package main.java.entity;
+package entity;
 
-import main.java.entity.Inventory;
+import entity.Inventory;
 
 import java.awt.*;
 import java.util.Arrays;

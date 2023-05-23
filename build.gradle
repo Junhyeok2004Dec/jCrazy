@@ -21,7 +21,7 @@ sourceSets {
 
 
 application {
-    mainClass = 'main.java.Main'
+    mainClass = 'Main'
 }
 
 
