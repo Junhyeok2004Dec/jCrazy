@@ -1,6 +1,6 @@
 package util;
 
-import entity.Player;
+import player.Player;
 import blocks.BlockManager;
 
 import javax.swing.*;

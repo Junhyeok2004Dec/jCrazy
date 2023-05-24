@@ -1,12 +1,12 @@
-package entity;
+package player;
 
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.lang.annotation.Target;
 
+import entity.Entity;
 import util.GamePanel;
 import util.KeyHandler;
 import util.Text;

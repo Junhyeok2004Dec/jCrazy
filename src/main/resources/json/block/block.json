@@ -1,0 +1,11 @@
+{
+
+  "id": 0,
+  "name": "돌",
+  "type": [
+    "Stone",
+    "Breakable"
+  ]
+
+
+}

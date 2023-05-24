@@ -1,4 +1,4 @@
-package entity;
+package player;
 
 import item.Item;
 import util.GamePanel;

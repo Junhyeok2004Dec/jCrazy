@@ -9,6 +9,8 @@ import javax.imageio.ImageIO;
 import javax.xml.crypto.Data;
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import static information.Data.mapPath;
 
@@ -40,17 +42,19 @@ public class BlockManager implements Data {
 		try {
 
 
-			block[0] = new Block(0, "돌", type.getTypes());
+			block[0] = new Block(0, "돌", new ArrayList(Arrays.asList(
+					"Stone", "Breakable"
+			)));
 			block[0].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
 
 
 
-			block[1] = new Block(1,"시멘트벽돌", type.getTypes());
+			block[1] = new Block(1,"벽돌1", type.getTypes());
 			block[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/brick1.png"));
 
 
 
-			block[2] = new Block();
+			block[2] = new Block(2, "벽돌2", type.getTypes());
 			block[2].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/brick2.png"));
 
 

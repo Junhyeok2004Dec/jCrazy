@@ -7,22 +7,34 @@ public class Type {
 	public ArrayList<Object> types = new ArrayList<>();
 	public ArrayList<String> materials = new ArrayList<>();
 
+	/*
+	MATERIALS
+
+	Stone 돌
+	Wood 나무
+	Water 물
+
+
+
+	 */
+
+/*
+
+TYPES
+
+Breakable
+UnBreakable
+
+
+ */
 
 
 	public void setMaterials() {
-		materials.add("Stone");
-		materials.add("Wood");
-		materials.add("Water");
 	}
 
 	public void init() {
 
 		setMaterials();
-
-		types.add("Breakable");
-		types.add("Unbreakable");
-		types.add("unAccessible");
-
 		types.add(materials);
 
 
