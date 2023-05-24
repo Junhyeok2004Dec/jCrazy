@@ -11,7 +11,7 @@ public class Block<T> {
 	Type type1 = new Type();
 
 
-	public BufferedImage image;
+	public transient BufferedImage image;
 	// Constructor
 	public Block(int id, String name, ArrayList<T> type) {
 		this.id = id;
@@ -49,5 +49,9 @@ public class Block<T> {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return "[" + this.id + "," + this.name + "," + this.type + "]";
+	}
 
 }

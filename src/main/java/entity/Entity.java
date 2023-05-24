@@ -1,16 +1,31 @@
 package entity;
 
-import entity.Inventory;
-
 import java.awt.*;
 import java.util.Arrays;
 import java.util.Vector;
 
 public class Entity {
+	public int getWorldX() {
+		return worldX;
+	}
+
+	public void setWorldX(int worldX) {
+		this.worldX = worldX;
+	}
+
+	public int getWorldY() {
+		return worldY;
+	}
+
+	public void setWorldY(int worldY) {
+		this.worldY = worldY;
+	}
 
 	public int x,y;
 	public int speed;
 	public int hp;
+
+	public int worldX, worldY;
 
 	public Inventory inventory;
 

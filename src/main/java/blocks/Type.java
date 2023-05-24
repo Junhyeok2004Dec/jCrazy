@@ -8,6 +8,7 @@ public class Type {
 	public ArrayList<String> materials = new ArrayList<>();
 
 
+
 	public void setMaterials() {
 		materials.add("Stone");
 		materials.add("Wood");

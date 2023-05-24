@@ -2,6 +2,7 @@ package entity;
 
 import item.Item;
 import util.GamePanel;
+import entity.Inventory;
 
 import java.util.ArrayList;
 import java.util.HashMap;

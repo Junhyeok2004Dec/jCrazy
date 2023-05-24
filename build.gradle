@@ -27,9 +27,10 @@ application {
 
 
 dependencies {
-    api 'org.apache.httpcomponents:httpclient:4.5.7'
-    implementation 'org.apache.commons:commons-lang3:3.5'
-
+    api 'org.apache.httpcomponents:httpclient:4.5.14'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'junit:junit:4.13.2'
+    implementation 'com.google.code.gson:gson:2.10.1'
 
     testImplementation(platform("org.junit:junit-bom:5.9.3"))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher") {
@@ -37,6 +38,8 @@ dependencies {
     }
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
+
+
 
 
 }

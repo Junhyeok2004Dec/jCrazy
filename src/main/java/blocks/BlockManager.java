@@ -1,6 +1,8 @@
 package blocks;
 
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import util.GamePanel;
 
 import javax.imageio.ImageIO;
@@ -62,6 +64,11 @@ public class BlockManager implements Data {
 			block[5] = new Block();
 			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
+
+			Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+			String strJson = gson.toJson(block[0]);
+
+			System.out.println(strJson);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

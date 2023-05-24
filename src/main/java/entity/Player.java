@@ -83,6 +83,14 @@ public class Player extends Entity {
 		speed = 2;
 
 
+		worldX = gp.tileSize * 6;
+		worldY = gp.tileSize * 5;
+
+		x= worldX;
+		y = worldY;
+
+
+
 	}
 
 	public int count = 0;
