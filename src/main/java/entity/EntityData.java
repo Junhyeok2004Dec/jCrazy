@@ -21,6 +21,14 @@ public class EntityData {
 
 	}
 
+	@Override
+	public String toString() {
+		return "[" + this.name + "," +
+				this.hp + "," + this.inventory + "," +
+				this.xp + "," + this.level + "," + this.maxXp + "]";
+	}
+
+
 	/**
 	 * 1 레벨업
 	 */
