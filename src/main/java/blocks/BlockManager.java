@@ -3,12 +3,18 @@ package blocks;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 import util.GamePanel;
 
 import javax.imageio.ImageIO;
 import javax.xml.crypto.Data;
 import java.awt.*;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -42,7 +48,7 @@ public class BlockManager implements Data {
 		try {
 
 
-			block[0] = new Block(0, "돌", new ArrayList(Arrays.asList(
+			block[0] = new Block(0, "돌", new ArrayList<>(Arrays.asList(
 					"Stone", "Breakable"
 			)));
 			block[0].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
@@ -69,10 +75,14 @@ public class BlockManager implements Data {
 			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
 
-			Gson gson = new GsonBuilder().disableHtmlEscaping().create();
-			String strJson = gson.toJson(block[0]);
+			String path = "src/main/resources/json/block/blockNew.json";
+			try (Writer writer = Files.newBufferedWriter(Path.of(path), StandardCharsets.UTF_8)) {
 
-			System.out.println(strJson);
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+				JsonElement tree = gson.toJsonTree(block[0]);
+				gson.toJson(tree, writer);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

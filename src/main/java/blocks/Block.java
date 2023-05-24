@@ -8,7 +8,6 @@ public class Block<T> {
 	private String name;
 	private ArrayList<T> type = new ArrayList<>();
 
-	Type type1 = new Type();
 
 
 	public transient BufferedImage image;
@@ -17,8 +16,6 @@ public class Block<T> {
 		this.id = id;
 		this.name = name;
 		this.type = type;
-		this.type1.init();
-		this.type.add((T) type1.getTypes());
 	}
 
 	public Block() {

@@ -1,10 +1,11 @@
-package player;
+package entity.player;
 
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 import entity.Entity;
 import util.GamePanel;
@@ -30,22 +31,24 @@ public class Player extends Entity {
 		try {
 
 
+			System.out.println(getClass().getClassLoader().getResourceAsStream("entity/player/up_1.png"));
 
-			up1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/up_1.png"));
-			up2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/up_2.png"));
-			left1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/left_1.png"));
-			left2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/left_2.png"));
-			right1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/right_1.png"));
-			right2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/right_2.png"));
-			down1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/down_1.png"));
-			down2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/down_2.png"));
-			idle1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_front.png"));
-			idle2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("player/player_shift.png"));
-			heart = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/heart.png"));
-			bkh1 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_1.png"));
-			bkh2 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_2.png"));
-			bkh3 = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_3.png"));
-			halfheart = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/heart/heart_half.png"));
+
+			up1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/up_1.png")));
+			up2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/up_2.png")));
+			left1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/left_1.png")));
+			left2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/left_2.png")));
+			right1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/right_1.png")));
+			right2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/right_2.png")));
+			down1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/down_1.png")));
+			down2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/down_2.png")));
+			idle1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/player_front.png")));
+			idle2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/player_shift.png")));
+			heart = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("item/heart/heart.png")));
+			bkh1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_1.png")));
+			bkh2 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_2.png")));
+			bkh3 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("item/heart/breakingH_3.png")));
+			halfheart = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("item/heart/heart_half.png")));
 
 
 
