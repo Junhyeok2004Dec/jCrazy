@@ -1,9 +1,7 @@
 {
-  "id": 1,
-  "name": "Iron",
+  "id": 5,
+  "name": "Barrier",
   "type": [
-    "Metal",
-    "Breakable",
-    "Electronic"
+    "UnBreakable"
   ]
 }

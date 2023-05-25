@@ -5,31 +5,27 @@ import java.util.Arrays;
 import java.util.Vector;
 
 public class Entity {
-	public int getWorldX() {
-		return worldX;
-	}
 
-	public void setWorldX(int worldX) {
-		this.worldX = worldX;
-	}
 
-	public int getWorldY() {
-		return worldY;
-	}
+	private int x,y;
+	private int speed;
+	private int hp;
+	private String name;
 
-	public void setWorldY(int worldY) {
-		this.worldY = worldY;
-	}
-
-	public int x,y;
-	public int speed;
-	public int hp;
-
-	public int worldX, worldY;
+	private int worldX, worldY;
 
 	public Inventory inventory;
 
 	public Entity() {
+	}
+
+	public Entity(String name, int x, int y, int hp) {
+		this.x = x;
+		this.y = y;
+		this.hp = hp;
+		this.speed = 1;
+		this.name = name;
+		this.inventory = new Inventory();
 	}
 
 
@@ -74,30 +70,21 @@ public class Entity {
 		this.hp = hp;
 	}
 
-	public void setInventory(Inventory inventory) {
-		this.inventory = inventory;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-	}
-
-	public void setSpriteNumber(int spriteNumber) {
-		SpriteNumber = spriteNumber;
-	}
-
-	public void setIdle(boolean idle) {
-		isIdle = idle;
-	}
-
-	public void setSpriteCount(int spriteCount) {
-		SpriteCount = spriteCount;
-	}
-
-
 	public void draw(Graphics2D g) {
 
 
 
 	}
+
+
+	@Override
+	public String toString() {
+		return
+				"[" + this.name + "," +
+						this.x + "," + this.y + ","
+						+ this.name + "," + this.speed + "]" ;
+
+
+	}
+
 }
