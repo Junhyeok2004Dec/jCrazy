@@ -4,14 +4,14 @@ package blocks;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import org.junit.Test;
 import util.GamePanel;
 
 import javax.imageio.ImageIO;
 import javax.xml.crypto.Data;
 import java.awt.*;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,6 +23,7 @@ import static information.Data.mapPath;
 public class BlockManager implements Data {
 
 	GamePanel gamePanel;
+	Gson gson;
 	Block[] block;
 
 	WorldGen wgen = new WorldGen();
@@ -78,7 +79,7 @@ public class BlockManager implements Data {
 			String path = "src/main/resources/json/block/blockNew.json";
 			try (Writer writer = Files.newBufferedWriter(Path.of(path), StandardCharsets.UTF_8)) {
 
-				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+				gson = new GsonBuilder().setPrettyPrinting().create();
 
 				JsonElement tree = gson.toJsonTree(block[0]);
 				gson.toJson(tree, writer);
@@ -86,11 +87,15 @@ public class BlockManager implements Data {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		createObjFromJson("src/main/resources/json/block/block.json");
 	}
 
 
 
 
+
+	@Test
 	public void mapgen(Graphics2D g2d) {
 
 
@@ -108,8 +113,6 @@ public class BlockManager implements Data {
 
 
 			for (String path : mapPath) {
-
-
 
 				//block 포지션을 설정하는 것으로 수정
 				for (int i = 0; i < height; i++) {
@@ -135,32 +138,21 @@ public class BlockManager implements Data {
 	 */
 	public void draw(Graphics2D g2d) {
 
-
-
-//		for (int i = 0; i < 5; i++)
-//			g2d.drawImage(block[i].image, 0 + i * gamePanel.tileSize, 0, gamePanel.tileSize, gamePanel.tileSize, null);
-
-
-		int column = 0;
-		int row = 0;
-
-		int x = 0;
-		int y = 0;
-
-
-
-
-
-
-
-
-
-
-
 		}
 
 
+	@Test
+	public void createObjFromJson(String path) {
 
 
+		String str = "";
+		Block objectBlock = null;
 
-}
+		try {
+			 objectBlock = gson.fromJson(new FileReader(path), Block.class);
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println(objectBlock);
+
+}}

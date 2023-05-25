@@ -1,11 +1,9 @@
 {
-
-  "id": 0,
-  "name": "돌",
+  "id": 1,
+  "name": "Iron",
   "type": [
-    "Stone",
-    "Breakable"
+    "Metal",
+    "Breakable",
+    "Electronic"
   ]
-
-
 }
