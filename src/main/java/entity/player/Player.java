@@ -7,6 +7,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import entity.Entity;
 import util.GamePanel;
 import util.KeyHandler;
@@ -64,12 +66,11 @@ public class Player extends Entity {
 
 	public Player(GamePanel gp, KeyHandler kh1) {
 
-
+		super("Player", 0,0, 12);
 		this.gp = gp;
 		this.kh1 = kh1;
 		this.inventory = new PlayerInventory();
 		this.init();
-		this.setHp(26);
 
 		getPlayerImage();
 	}
@@ -81,16 +82,14 @@ public class Player extends Entity {
 	public void init() {
 
 
-		x = 100;
-		y = 100;
-		speed = 2;
+
+		super.setPos(100, 100);
+		super.setSpeed(2);
+
+		Gson gson = new GsonBuilder().create();
 
 
-		worldX = gp.tileSize * 6;
-		worldY = gp.tileSize * 5;
 
-		x= worldX;
-		y = worldY;
 
 
 

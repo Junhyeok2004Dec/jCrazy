@@ -67,23 +67,41 @@ public class BlockManager implements Data {
 			block[2].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/brick2.png"));
 
 
-			block[3] = new Block();
+			block[3] = new Block(3, "잔디", type.getTypes());
 			block[3].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/grass.png"));
 
 
-			block[4] = new Block();
+			block[4] = new Block(4, "방호벽", type.getTypes());
 			block[4].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
 			block[5] = createObjFromJson("src/main/resources/json/block/block.json");
 			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
-			System.out.println(block[5].toString());
+
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
+
+		String path = "src/main/resources/json/block/blockNew.json";
+
+
+		try (Writer writer = Files.newBufferedWriter(Path.of(path), StandardCharsets.UTF_8)) {
+
+
+
+				gson = new GsonBuilder().setPrettyPrinting().create();
+
+				JsonElement tree = gson.toJsonTree(block);
+				gson.toJson(tree, writer);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
+
+
 
 
 
@@ -150,4 +168,7 @@ public class BlockManager implements Data {
 		}
 		return objectBlock;
 
-}}
+}
+
+
+}

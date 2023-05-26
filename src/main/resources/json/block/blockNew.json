@@ -1,8 +1,39 @@
-{
-  "id": 0,
-  "name": "돌",
-  "type": [
-    "Stone",
-    "Breakable"
-  ]
-}
+[
+  {
+    "id": 0,
+    "name": "돌",
+    "type": [
+      "Stone",
+      "Breakable"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "벽돌1",
+    "type": []
+  },
+  {
+    "id": 2,
+    "name": "벽돌2",
+    "type": []
+  },
+  {
+    "id": 3,
+    "name": "잔디",
+    "type": []
+  },
+  {
+    "id": 4,
+    "name": "방호벽",
+    "type": []
+  },
+  {
+    "id": 5,
+    "name": "Barrier",
+    "type": [
+      "UnBreakable"
+    ]
+  },
+  null,
+  null
+]
