@@ -29,10 +29,8 @@
   },
   {
     "id": 5,
-    "name": "Barrier",
-    "type": [
-      "UnBreakable"
-    ]
+    "name": "물1",
+    "type": []
   },
   null,
   null

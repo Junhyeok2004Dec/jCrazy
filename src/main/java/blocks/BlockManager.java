@@ -5,7 +5,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 import org.junit.Test;
+import util.Deserialize;
 import util.GamePanel;
 
 import javax.imageio.ImageIO;
@@ -17,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static information.Data.mapPath;
 
@@ -74,8 +77,8 @@ public class BlockManager implements Data {
 			block[4] = new Block(4, "방호벽", type.getTypes());
 			block[4].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
 
-			block[5] = createObjFromJson("src/main/resources/json/block/block.json");
-			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
+			block[5] = new Block(5, "물1", type.getTypes());
+			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/ocean.png"));
 
 
 
@@ -161,8 +164,11 @@ public class BlockManager implements Data {
 		Block objectBlock = new Block();
 
 		gson =new Gson();
+
+
 		try {
-			 objectBlock = gson.fromJson(new FileReader(path), Block.class);
+			java.lang.reflect.Type parseList = new TypeToken<ArrayList<Deserialize>>(){}.getType();
+			List<Deserialize> objectList = gson.fromJson(new FileReader(path), parseList);
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
