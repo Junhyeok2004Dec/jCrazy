@@ -7,10 +7,10 @@ import java.util.Vector;
 public class Entity {
 
 
-	public int x,y;
-	public int speed;
-	public int hp;
-	public String name;
+	private int x,y;
+	private int speed;
+	private int hp;
+	private String name;
 
 	private int worldX, worldY;
 
@@ -53,12 +53,21 @@ public class Entity {
 		this.y = position.get(1);
 	}
 
-	public int getX() {
-		return this.x;
+	public void modX(int var) {
+		 this.x += var;
 	}
 
-	public int getY() {
-		return this.y;
+	public void modY(int var) {
+
+		this.y += var;
+	}
+
+	public void modHP(int var) {
+		this.hp += var;
+	}
+
+	public int getHp() {
+		return hp;
 	}
 
 	public void setPos(int x, int y) {
@@ -66,10 +75,6 @@ public class Entity {
 		this.y = y;
 	}
 
-	public void setInfo(Vector<Integer> info) {
-		this.hp = info.get(0);
-		this.speed = info.get(1);
-	}
 
 	public void setSpeed(int speed) {
 		this.speed = speed;
@@ -98,5 +103,6 @@ public class Entity {
 
 
 	}
+
 
 }

@@ -29,6 +29,8 @@ public class BlockManager implements Data {
 	Gson gson;
 	Block[] block;
 
+	int mapTileNum[][];
+
 	WorldGen wgen = new WorldGen();
 
 	Type type = new Type();
@@ -37,8 +39,12 @@ public class BlockManager implements Data {
 	public BlockManager(GamePanel gp) {
 		this.gamePanel = gp;
 
-		block = new Block[8];
+		block = new Block[10];
+
+		mapTileNum = new int [gamePanel.worldTileWidth][gamePanel.worldTileHeight];
 		getBlockImage();
+
+
 
 
 	}
@@ -82,6 +88,8 @@ public class BlockManager implements Data {
 
 
 
+
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -114,16 +122,20 @@ public class BlockManager implements Data {
 	public void mapgen(Graphics2D g2d) {
 
 
-		int width = 14;
-		int height = 14;
+		int width = gamePanel.worldTileWidth;
+		int height = gamePanel.worldTileHeight;
+
+
+		int worldposX = 0;
+		int worldposY = 0;
+
 
 		if(gamePanel.asdf == 0) {
 
-			wgen.Data("src/main/java/data/map/map.dat");
+
+			wgen.Data("src/main/resources/world/map/map.dat");
 
 
-			 width = wgen.getWidth();
-			 height = wgen.getHeight();
 		}
 
 
@@ -134,10 +146,24 @@ public class BlockManager implements Data {
 
 					for (int p = 0; p < width; p++) {
 
+
+					int tileNum = mapTileNum[p][i];
+
+					int worldX = 0;
+					int worldY = 0;
+
+					int screenPosX = worldX - gamePanel.player.x + gamePanel.player.x
+
+
+
+
 						g2d.drawImage(block[wgen.getData(p, i)].image,
 
 
 								gamePanel.tileSize * i, gamePanel.tileSize * p, gamePanel.tileSize, gamePanel.tileSize, null);
+
+
+						mapTileNum[p][i] = wgen.getData(p,i);
 
 					}
 				}

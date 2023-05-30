@@ -105,13 +105,13 @@ public class Player extends Entity {
 
 
 			direction = "UP";
-			y -= speed;
+			modY(super.getSpeed() * (-1));
 
 
 		}
 		if (KeyHandler.down == true) {
 			direction = "DOWN";
-			y += speed;
+			modY(super.getSpeed());
 
 
 		}
@@ -119,13 +119,12 @@ public class Player extends Entity {
 
 			direction = "RIGHT";
 
-			x += speed;
+			modX(super.getSpeed());
 		}
 		if (KeyHandler.left == true) {
 
 			direction = "LEFT";
-
-			x -= speed;
+			modX(super.getSpeed() * (-1));
 		}
 
 
@@ -135,10 +134,10 @@ public class Player extends Entity {
 
 		if(count > 24) {
 			if (KeyHandler.subtract== true) {
-				this.hp--;
+				super.modHP(-1);
 			}
 			if (KeyHandler.add == true) {
-				this.hp++;
+				super.modHP(1);
 			}
 
 			count = 0;
@@ -146,7 +145,7 @@ public class Player extends Entity {
 
 		if(SpriteCount > 24) {
 
-			System.out.println(this.hp);
+			System.out.println(super.getHP());
 
 			if (KeyHandler.left || KeyHandler.right || KeyHandler.up || KeyHandler.down) {
 
@@ -183,7 +182,6 @@ public class Player extends Entity {
 	public void draw(Graphics2D gp) {
 		
 		BufferedImage image = null;
-		text.setText(String.valueOf(this.hp), 0, this.gp.screenHeight/2);
 
 		switch(direction)
 
@@ -263,7 +261,11 @@ public class Player extends Entity {
 
 
 
+		gp.setFont(new Font("바탕", 20, 20));
 
+		gp.setColor(new Color(640401));
+
+		gp.drawString(String.valueOf(this.hp), 200,300);
 		gp.drawImage(image, x, y, this.gp.tileSize, this.gp.tileSize, null);
 
 
@@ -271,6 +273,8 @@ public class Player extends Entity {
 
 
 		//Health 코드 정리예정.
+
+		/*
 		if(!(this.hp == 0)) {
 
 
@@ -283,7 +287,7 @@ public class Player extends Entity {
 		if((this.hp%2) == 1) {
 			gp.drawImage(halfheart, this.hp * this.gp.tileSize / 4 - 24,0,this.gp.tileSize / 2, this.gp.tileSize / 2, null);
 
-		}
+		} */
 
 
 

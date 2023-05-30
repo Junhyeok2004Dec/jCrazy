@@ -27,6 +27,12 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int screenMultiX = 1;
 	public final int screenMultiY = 1;
 
+
+	public final int worldTileWidth = 60;
+	public final int worldTileHeight = 60;
+	public final int worldWidth = tileSize * worldTileWidth;
+	public final int worldHeight = tileSize * worldTileHeight;
+
 	public int getTileSize() {
 		return this.tileSize;
 	}
@@ -45,7 +51,7 @@ public class GamePanel extends JPanel implements Runnable{
 	Thread gameThread;
 
 
-	Player player = new Player(this, keyHandler);
+	public Player player = new Player(this, keyHandler);
 	util.Text text = new util.Text();
 
 
