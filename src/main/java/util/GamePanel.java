@@ -28,10 +28,10 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int screenMultiY = 1;
 
 
-	public final int worldTileWidth = 60;
-	public final int worldTileHeight = 60;
-	public final int worldWidth = tileSize * worldTileWidth;
-	public final int worldHeight = tileSize * worldTileHeight;
+	public final int maxWorldCol = 60;
+	public final int maxWorldRow = 60;
+	public final int worldWidth = tileSize * maxWorldCol;
+	public final int worldHeight = tileSize * maxWorldRow;
 
 	public int getTileSize() {
 		return this.tileSize;
@@ -53,11 +53,6 @@ public class GamePanel extends JPanel implements Runnable{
 
 	public Player player = new Player(this, keyHandler);
 	util.Text text = new util.Text();
-
-
-	int playerX = 100;
-	int playerY = 100;
-	int playerSpeed = 4;
 
 
 	int fps = 240;

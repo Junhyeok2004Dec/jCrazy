@@ -26,6 +26,8 @@ public class Player extends Entity {
 
 	public String direction;
 
+	public final int screenX, screenY;
+
 
 
 	public void getPlayerImage() {
@@ -33,7 +35,6 @@ public class Player extends Entity {
 		try {
 
 
-			System.out.println(getClass().getClassLoader().getResourceAsStream("entity/player/up_1.png"));
 
 
 			up1 = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("entity/player/up_1.png")));
@@ -71,6 +72,12 @@ public class Player extends Entity {
 		this.kh1 = kh1;
 		this.inventory = new PlayerInventory();
 		this.init();
+
+
+		//centrePoint
+		screenY = gp.screenWidth/2;
+		screenX = gp.screenHeight/2;
+
 
 		getPlayerImage();
 	}
@@ -145,7 +152,6 @@ public class Player extends Entity {
 
 		if(SpriteCount > 24) {
 
-			System.out.println(super.getHP());
 
 			if (KeyHandler.left || KeyHandler.right || KeyHandler.up || KeyHandler.down) {
 
@@ -161,7 +167,7 @@ public class Player extends Entity {
 				SpriteCount = 0;
 			}
 
-			if (KeyHandler.suicide) {
+			if (KeyHandler.exit) {
 				this.setHp(0);
 
 			}
@@ -265,8 +271,8 @@ public class Player extends Entity {
 
 		gp.setColor(new Color(640401));
 
-		gp.drawString(String.valueOf(this.hp), 200,300);
-		gp.drawImage(image, x, y, this.gp.tileSize, this.gp.tileSize, null);
+		gp.drawString(String.valueOf(super.getHP()), 200,300);
+		gp.drawImage(image, screenX, screenY, this.gp.tileSize, this.gp.tileSize, null);
 
 
 

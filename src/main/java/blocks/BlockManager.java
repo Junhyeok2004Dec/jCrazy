@@ -4,7 +4,6 @@ package blocks;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import org.junit.Test;
 import util.Deserialize;
@@ -41,7 +40,7 @@ public class BlockManager implements Data {
 
 		block = new Block[10];
 
-		mapTileNum = new int [gamePanel.worldTileWidth][gamePanel.worldTileHeight];
+		mapTileNum = new int [gamePanel.maxWorldCol][gamePanel.maxWorldRow];
 		getBlockImage();
 
 
@@ -122,55 +121,47 @@ public class BlockManager implements Data {
 	public void mapgen(Graphics2D g2d) {
 
 
-		int width = gamePanel.worldTileWidth;
-		int height = gamePanel.worldTileHeight;
+		int width = gamePanel.maxWorldCol;
+		int height = gamePanel.maxWorldRow;
 
 
 		int worldposX = 0;
 		int worldposY = 0;
 
 
-		if(gamePanel.asdf == 0) {
+		wgen.Data("src/main/resources/world/map/map.dat");
 
 
-			wgen.Data("src/main/resources/world/map/map.dat");
+
+			//block 포지션을 설정하는 것으로 수정
+			for (int Row = 0; Row < height; Row++) {
+
+				for (int col = 0; col < width; col++) {
 
 
-		}
+				int tileNum = mapTileNum[col][Row];
 
+				int worldX = col * gamePanel.tileSize;
+				int worldY = Row * gamePanel.tileSize;
 
-			for (String path : mapPath) {
-
-				//block 포지션을 설정하는 것으로 수정
-				for (int i = 0; i < height; i++) {
-
-					for (int p = 0; p < width; p++) {
-
-
-					int tileNum = mapTileNum[p][i];
-
-					int worldX = 0;
-					int worldY = 0;
-
-					int screenPosX = worldX - gamePanel.player.x + gamePanel.player.x
+				int screenX = worldX - gamePanel.player.getWorldX() + gamePanel.player.screenX;
+				int screenY = worldY - gamePanel.player.getWorldY() + gamePanel.player.screenY;
 
 
 
 
-						g2d.drawImage(block[wgen.getData(p, i)].image,
+					g2d.drawImage(block[wgen.getData(col, Row)].image,
+							screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
 
 
-								gamePanel.tileSize * i, gamePanel.tileSize * p, gamePanel.tileSize, gamePanel.tileSize, null);
+					mapTileNum[col][Row] = wgen.getData(col,Row);
 
-
-						mapTileNum[p][i] = wgen.getData(p,i);
-
-					}
 				}
 
-			}
-			gamePanel.asdf++;
+
 		}
+		gamePanel.asdf++;
+	}
 
 
 	/**

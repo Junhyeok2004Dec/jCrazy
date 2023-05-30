@@ -48,11 +48,6 @@ public class Entity {
 
 
 
-	public void setPosition(Vector<Integer> position) {
-		this.x = position.get(0);
-		this.y = position.get(1);
-	}
-
 	public void modX(int var) {
 		 this.x += var;
 	}
@@ -66,9 +61,7 @@ public class Entity {
 		this.hp += var;
 	}
 
-	public int getHp() {
-		return hp;
-	}
+
 
 	public void setPos(int x, int y) {
 		this.x = x;
@@ -105,4 +98,24 @@ public class Entity {
 	}
 
 
+
+	public void modWorldX(int var) {
+		this.worldX += var;
+	}
+
+	public void modWorldY(int var) {
+		this.worldY += var;
+	}
+
+	public int getWorldX() {
+		return this.worldX;
+	}
+
+	public int getWorldY() {
+		return this.worldY;
+	}
+
+	public int getHP() {
+		return this.hp;
+	}
 }
