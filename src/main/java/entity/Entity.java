@@ -7,14 +7,15 @@ import java.util.Vector;
 public class Entity {
 
 
-	private int x,y;
-	private int speed;
-	private int hp;
-	private String name;
+	private int x,y, speed, hp;
 
+	private String name;
+	private EntityData entityData;
 	private int worldX, worldY;
 
 	public Inventory inventory;
+
+
 
 	public Entity() {
 	}
