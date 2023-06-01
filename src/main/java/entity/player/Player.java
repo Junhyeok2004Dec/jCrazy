@@ -139,16 +139,16 @@ public class Player extends Entity {
 
 		count++;
 
-		if(count > 24) {
-			if (KeyHandler.subtract== true) {
-				super.modHP(-1);
-			}
-			if (KeyHandler.add == true) {
-				super.modHP(1);
-			}
 
-			count = 0;
+		if (KeyHandler.subtract== true) {
+			super.modHP(-1);
 		}
+		if (KeyHandler.add == true) {
+			super.modHP(1);
+		}
+
+		count = 0;
+
 
 		if(SpriteCount > 24) {
 
@@ -271,7 +271,7 @@ public class Player extends Entity {
 
 		gp.setColor(new Color(640401));
 
-		gp.drawString(String.valueOf(super.getHP()), 200,300);
+		gp.drawString(this.getWorldX() + "," + this.getWorldY(), 200,300);
 		gp.drawImage(image, screenX, screenY, this.gp.tileSize, this.gp.tileSize, null);
 
 
