@@ -148,8 +148,6 @@ public class BlockManager implements Data {
 				int screenY = worldY - gamePanel.player.getWorldY() + gamePanel.player.screenY;
 
 
-
-
 					g2d.drawImage(block[wgen.getData(col, Row)].image,
 							screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
 

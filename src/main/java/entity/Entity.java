@@ -50,11 +50,13 @@ public class Entity {
 
 	public void modX(int var) {
 		 this.x += var;
+		 modWorldX(var);
 	}
 
 	public void modY(int var) {
 
 		this.y += var;
+		modWorldY(var);
 	}
 
 	public void modHP(int var) {
