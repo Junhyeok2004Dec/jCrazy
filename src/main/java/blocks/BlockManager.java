@@ -59,6 +59,8 @@ public class BlockManager implements Data {
 		try {
 
 
+
+
 			block[0] = new Block(0, "돌", new ArrayList<>(Arrays.asList(
 					"Stone", "Breakable"
 			)));
