@@ -7,7 +7,12 @@ public class KeyHandler implements KeyListener {
 
 
 	public static boolean up, down, right, left, exit, add, subtract;
+	GamePanel gp;
 
+
+	public KeyHandler(GamePanel gp) {
+		this.gp = gp;
+	}
 	/**
 	 * Invoked when a key has been typed.
 	 * See the class description for {@link KeyEvent} for a definition of
@@ -55,7 +60,12 @@ public class KeyHandler implements KeyListener {
 			case KeyEvent.VK_DOWN:
 				subtract = true;
 				break;
-
+			case KeyEvent.VK_OPEN_BRACKET:
+				gp.zoomFactor(-1);
+				break;
+			case KeyEvent.VK_CLOSE_BRACKET:
+				gp.zoomFactor(1);
+				break;
 
 			default:
 				break;

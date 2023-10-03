@@ -19,7 +19,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int rootTileScale = 16;
 	public final int sizeFactor = 3;
 
-	public final int tileSize = rootTileScale * sizeFactor;
+	public int tileSize = rootTileScale * sizeFactor;
 	public final int maxScreenColumn =  16;
 	public final int maxScreenRow = 12;
 
@@ -47,7 +47,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 	BlockManager blockManager = new BlockManager(this);
 
-	util.KeyHandler keyHandler = new util.KeyHandler();
+	util.KeyHandler keyHandler = new util.KeyHandler(this);
 	Thread gameThread;
 
 
@@ -57,6 +57,22 @@ public class GamePanel extends JPanel implements Runnable{
 
 	int fps = 240;
 
+
+
+	/*
+
+
+	메인화면 구현
+
+
+	1. 첫 init 이후 메인화면 draw(기본 화면)
+	2. if press key(space) -> 다음 scene으로 넘어감(현 메인화면 zindex 우선순위 하락)
+	3. 메인화면의 zindex를 바꾸는 식
+
+
+
+
+	 */
 
 
 	public GamePanel() {
@@ -137,6 +153,9 @@ public class GamePanel extends JPanel implements Runnable{
 		super.paintComponent(g);
 
 		Graphics2D g2d = (Graphics2D) g;
+
+
+
 		blockManager.draw(g2d);
 		blockManager.mapgen(g2d);
 		player.draw(g2d);
@@ -146,5 +165,21 @@ public class GamePanel extends JPanel implements Runnable{
 		g2d.dispose();
 	}
 
+	public void zoomFactor(int var) {
+
+		int tempWorldWidth = tileSize*maxWorldCol;
+
+		tileSize +=var;
+		int currentWorldWidth = tileSize*maxWorldRow;
+
+		double multiply = (double) (currentWorldWidth / tempWorldWidth);
+
+		double newPlayerX = player.getWorldX() * multiply;
+		double newPlayerY = player.getWorldY() * multiply;
+
+		player.setPos((int) newPlayerX, (int)newPlayerY);
+
+
+	}
 }
 

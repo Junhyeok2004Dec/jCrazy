@@ -57,7 +57,9 @@ public class Player extends Entity {
 
 
 		} catch(IOException e) {
-			e.printStackTrace();
+
+			//init
+			//e.printStackTrace();
 		}
 	}
 
@@ -140,10 +142,10 @@ public class Player extends Entity {
 		count++;
 
 
-		if (KeyHandler.subtract== true) {
+		if (KeyHandler.subtract) {
 			super.modHP(-1);
 		}
-		if (KeyHandler.add == true) {
+		if (KeyHandler.add) {
 			super.modHP(1);
 		}
 
