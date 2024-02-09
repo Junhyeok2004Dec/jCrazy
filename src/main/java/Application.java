@@ -41,5 +41,6 @@ public class Application {
 		titlePanel = new JPanel();
 		container = jframe.getContentPane();
 
+
 	}
 }
