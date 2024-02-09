@@ -1,4 +1,8 @@
 package item;
 
-public class Potion {
+public class Potion extends Item{
+
+    public Potion() {
+
+    }
 }
