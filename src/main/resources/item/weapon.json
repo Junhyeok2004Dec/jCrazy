@@ -1,0 +1,52 @@
+[{
+  "id": 101,
+  "name": "보급단검",
+  "lore": "기본 지급되는 보급형 검이다. 쓸 만 한가..?",
+  "type": "단검",
+  "cost": 500,
+  "weaponAttribute"  : {
+
+    "minAtk": 30,
+    "maxAtk": 65,
+    "minMatk": 10,
+    "maxMatk": 30,
+    "attackSpeed": 4,
+    "currentLevel": 1,
+    "maxLevel": 10
+  }
+
+
+},
+{
+"id": 102,
+"name": "보급완드",
+"lore": "기본 지급되는 보급형 완드다. 쓸 만 한가..?",
+"type": "완드",
+"cost": 500,
+"weaponAttribute" : {
+"minAtk": 10,
+"maxAtk": 16,
+"minMatk": 35,
+"maxMatk": 70,
+"attackSpeed": 4,
+"currentLevel": 1,
+"maxLevel": 10
+
+}
+},
+{
+"id": 103,
+"name": "보급단궁",
+"lore": "기본 지급되는 보급형 단궁이다. 쓸 만 한가..?",
+"type": "단궁",
+"cost": 500,
+"weaponAttribute" : {
+"minAtk": 24,
+"maxAtk": 56,
+"minMatk": 30,
+"maxMatk": 55,
+"attackSpeed": 3,
+"currentLevel": 1,
+"maxLevel": 10
+}
+}]

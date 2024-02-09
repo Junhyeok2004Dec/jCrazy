@@ -7,15 +7,19 @@ public class Item {
 
 	private String name;
 	private String lore;
-	private ArrayList attribte;
-	private HashMap attribute;
+	private ArrayList attribute;
+	private int cost;
 
 
-	public <K,V> Item(String name, HashMap<K,V> data)
-	{
+	public Item() {
+
+	}
+
+	public Item(String name) {
 		this.name = name;
 		this.lore = "";
-		this.attribute = data;
+		this.attribute = null;
+		this.cost = 1;
 	}
 
 
@@ -24,36 +28,4 @@ public class Item {
 
 
 
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLore() {
-		return lore;
-	}
-
-	public void setLore(String lore) {
-		this.lore = lore;
-	}
-
-	public ArrayList getAttribte() {
-		return attribte;
-	}
-
-	public void setAttribte(ArrayList attribte) {
-		this.attribte = attribte;
-	}
-
-	public HashMap getAttribute() {
-		return attribute;
-	}
-
-	public void setAttribute(HashMap attribute) {
-		this.attribute = attribute;
-	}
 }

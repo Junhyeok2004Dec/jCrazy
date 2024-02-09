@@ -20,7 +20,7 @@ public class PlayerInventory extends Inventory {
 		HashMap<Integer, String> map = new HashMap<>();
 		map.put(1,"none");
 		for(int i = 0; i < width * height; i++) {
-			this.items.add(new Item("air", map));
+			this.items.add(new Item("air"));
 		}
 		this.itemsArrays = new Item[width][height];
 

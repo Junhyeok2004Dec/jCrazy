@@ -19,10 +19,8 @@ public class Inventory {
 		this.items = new ArrayList<>();
 
 
-		HashMap<Integer, String> map = new HashMap<>();
-		map.put(1,"none");
 		for(int i = 0; i < width * height; i++) {
-			this.items.add(new Item("air", map));
+			this.items.add(new Item("air"));
 		}
 
 

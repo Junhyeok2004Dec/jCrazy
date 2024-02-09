@@ -1,46 +1,5 @@
 [
-  {
-    "id": 101,
-    "name": "보급단검",
-    "lore": "기본 지급되는 보급형 검이다. 쓸 만 한가..?",
-    "currentLevel": 1,
-    "maxLevel": 10,
-    "type": "단검",
-    "minAtk": 30,
-    "maxAtk": 65,
-    "minMatk": 10,
-    "maxMatk": 30,
-    "attackSpeed": 4,
-    "cost": 500
-  },
-  {
-    "id": 102,
-    "name": "보급완드",
-    "lore": "기본 지급되는 보급형 완드다. 쓸 만 한가..?",
-    "currentLevel": 1,
-    "maxLevel": 10,
-    "type": "완드",
-    "minAtk": 10,
-    "maxAtk": 16,
-    "minMatk": 35,
-    "maxMatk": 70,
-    "attackSpeed": 4,
-    "cost": 500
-  },
-  {
-    "id": 103,
-    "name": "보급단궁",
-    "lore": "기본 지급되는 보급형 단궁이다. 쓸 만 한가..?",
-    "currentLevel": 1,
-    "maxLevel": 10,
-    "type": "단궁",
-    "minAtk": 24,
-    "maxAtk": 56,
-    "minMatk": 30,
-    "maxMatk": 55,
-    "attackSpeed": 3,
-    "cost": 500
-  },
+
   {
     "id": 201,
     "name": "체력 회복의 물약A",
@@ -51,5 +10,20 @@
     "healType": "immediately",
     "healAmount": 10,
     "cost": 50
+  },
+  {
+    "id": 1001,
+    "name": "1원",
+    "lore": "1원 한국조폐공사",
+    "type": "money",
+    "cost": 1
+  },
+  {
+    "id": 1002,
+    "name": "5원",
+    "lore": "5원 한국조폐공사",
+    "type": "money",
+    "cost": 5
   }
+
 ]
