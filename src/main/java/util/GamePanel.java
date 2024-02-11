@@ -6,7 +6,7 @@ import blocks.BlockManager;
 import javax.swing.*;
 import java.awt.*;
 
-public class GamePanel extends JPanel implements Runnable{
+public class GamePanel extends MainPanel implements Runnable{
 
 
 	public int asdf = 0;
@@ -76,6 +76,9 @@ public class GamePanel extends JPanel implements Runnable{
 
 
 	public GamePanel() {
+
+		super.titlePanel.setVisible(false);
+		super.startBtnPanel.setVisible(false);
 
 
 		this.setPreferredSize(new Dimension(screenWidth, screenHeight));

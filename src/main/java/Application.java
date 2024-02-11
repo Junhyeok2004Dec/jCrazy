@@ -1,4 +1,5 @@
 import util.GamePanel;
+import util.MainPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +12,7 @@ public class Application {
 
 	public static void main(String[] args) {
 
-
+		new Application();
 
 	}
 
@@ -25,8 +26,8 @@ public class Application {
 		jframe.setTitle("MainCraft");
 
 
-		GamePanel gamePanel = new GamePanel();
-		jframe.add(gamePanel);
+		MainPanel mp = new MainPanel();
+		jframe.add(mp);
 
 		jframe.pack();
 
@@ -35,7 +36,6 @@ public class Application {
 		jframe.setVisible(true);
 
 
-		gamePanel.startGameThread();
 	}
 	public void mainScreen() {
 		titlePanel = new JPanel();
