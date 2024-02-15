@@ -50,7 +50,6 @@ public class BlockManager implements Data {
 
 
 
-	@Test
 	public void getBlockImage() {
 
 

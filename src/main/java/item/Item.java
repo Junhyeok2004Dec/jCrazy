@@ -2,6 +2,8 @@ package item;
 
 import com.google.gson.Gson;
 
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,6 +17,9 @@ public class Item {
 	private int cost;
 
 
+	public transient BufferedImage image;
+
+	private String jsonPath;
 	public Item() {
 
 	}
@@ -26,6 +31,12 @@ public class Item {
 		this.cost = 1;
 	}
 
+
+
+	public void setPath(String path )
+	{
+		this.jsonPath = path;
+	}
 
 
 
