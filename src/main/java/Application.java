@@ -1,3 +1,4 @@
+import com.sun.tools.javac.Main;
 import util.GamePanel;
 import util.MainPanel;
 
@@ -6,18 +7,18 @@ import java.awt.*;
 
 public class Application {
 
-	JPanel titlePanel;
-	public Container container;
-	JFrame jframe;
+    JPanel titlePanel;
+    public Container container;
+    //JFrame jframe;
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		new Application();
+        new Application();
 
-	}
+    }
 
-	public Application() {
-
+    public Application() {
+/*
 		jframe = new JFrame();
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -25,22 +26,16 @@ public class Application {
 
 		jframe.setTitle("MainCraft");
 
-
-		MainPanel mp = new MainPanel();
-		jframe.add(mp);
-
-		jframe.pack();
+			jframe.pack();
 
 		jframe.setLocationRelativeTo(null);
 
 		jframe.setVisible(true);
+*/
+        new MainPanel();
+        //jframe.getContentPane().add(mp);
 
 
-	}
-	public void mainScreen() {
-		titlePanel = new JPanel();
-		container = jframe.getContentPane();
-
-
-	}
+    }
 }
+
