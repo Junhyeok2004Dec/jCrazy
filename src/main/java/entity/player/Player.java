@@ -77,8 +77,8 @@ public class Player extends Entity {
 
 
 		//centrePoint
-		screenY = gp.screenWidth/2;
-		screenX = gp.screenHeight/2;
+		screenX = (gp.screenWidth - gp.tileSize)/2;
+		screenY = (gp.screenHeight - gp.tileSize)/2;
 
 
 		getPlayerImage();

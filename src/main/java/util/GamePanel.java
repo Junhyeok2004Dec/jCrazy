@@ -24,8 +24,8 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int maxScreenRow = 12;
 
 
-	public final int screenMultiX = 1;
-	public final int screenMultiY = 1;
+	public final int screenMultiX = 2;
+	public final int screenMultiY = 2;
 
 
 	public final int maxWorldCol = 60;

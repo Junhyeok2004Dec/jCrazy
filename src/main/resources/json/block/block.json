@@ -2,6 +2,7 @@
   {
     "id": 0,
     "name": "돌",
+    "imagePath": "item/block/.png",
     "type": [
       "Stone",
       "Breakable"
@@ -10,30 +11,72 @@
   {
     "id": 1,
     "name": "벽돌1",
-    "type": []
+    "imagePath":  "item/block/.png",
+    "type": [
+      "brick",
+      "Breakable"
+    ]
   },
   {
     "id": 2,
     "name": "벽돌2",
-    "type": []
+    "imagePath":  "item/block/.png",
+    "type": [
+      "brick",
+      "Breakable"]
   },
   {
     "id": 3,
     "name": "잔디",
-    "type": []
+    "imagePath":  "item/block/.png",
+    "type": [
+      "dirt",
+      "Breakable"]
   },
   {
     "id": 4,
-    "name": "방호벽",
+    "name": "나무",
+    "imagePath":  "item/block/.png",
     "type": []
   },
   {
     "id": 5,
     "name": "Barrier",
+    "imagePath":  "item/block/.png",
     "type": [
       "UnBreakable"
     ]
   },
-  null,
-  null
+  {
+    "id": 6,
+    "name": "바다1",
+    "imagePath":  "item/block/.png",
+    "type": [
+      "water", "UnBreakable"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "바다2",
+    "imagePath":  "item/block/.png",
+    "type": [
+      "water", "UnBreakable"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "바다3",
+    "imagePath":  "item/block/.png",
+    "type": [
+      "water", "UnBreakable"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "심해",
+    "imagePath":  "item/block/.png",
+    "type": [
+      "water", "UnBreakable"
+    ]
+  }
 ]
