@@ -101,7 +101,7 @@ public class BlockManager implements Data {
 			block.get(0).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
 
 
-
+/*
 			block[1] = new Block(1,"벽돌1", type.getTypes());
 			block[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/brick1.png"));
 
@@ -124,7 +124,7 @@ public class BlockManager implements Data {
 			block[6] = new Block(6, "물2", type.getTypes());
 			block[6].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/ocean2.png"));
 
-
+*/
 
 
 		} catch (IOException e) {
