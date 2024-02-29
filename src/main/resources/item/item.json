@@ -1,6 +1,6 @@
 [
-  {
 
+  {
     "id": 201,
     "name": "체력 회복의 물약A",
     "lore": "[즉시 취식형] 기본 지급되는 보급 회복 물약이다. 아플 때 쓰자",
@@ -10,5 +10,20 @@
     "healType": "immediately",
     "healAmount": 10,
     "cost": 50
+  },
+  {
+    "id": 1001,
+    "name": "1원",
+    "lore": "1원 한국조폐공사",
+    "type": "money",
+    "cost": 1
+  },
+  {
+    "id": 1002,
+    "name": "5원",
+    "lore": "5원 한국조폐공사",
+    "type": "money",
+    "cost": 5
   }
+
 ]
