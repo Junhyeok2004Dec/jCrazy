@@ -32,7 +32,11 @@
     "name": "물1",
     "type": []
   },
-  null,
+  {
+    "id": 6,
+    "name": "물2",
+    "type": []
+  },
   null,
   null,
   null
