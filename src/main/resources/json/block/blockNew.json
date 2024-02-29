@@ -9,35 +9,50 @@
   },
   {
     "id": 1,
-    "name": "벽돌1",
-    "type": []
+    "name": "돌",
+    "type": [
+      "Stone",
+      "Breakable"
+    ]
   },
   {
     "id": 2,
-    "name": "벽돌2",
-    "type": []
+    "name": "돌",
+    "type": [
+      "Stone",
+      "Breakable"
+    ]
   },
   {
     "id": 3,
-    "name": "잔디",
-    "type": []
+    "name": "돌",
+    "type": [
+      "Stone",
+      "Breakable"
+    ]
   },
   {
-    "id": 4,
-    "name": "방호벽",
-    "type": []
+    "id": 3,
+    "name": "돌",
+    "type": [
+      "Stone",
+      "Breakable"
+    ]
   },
   {
-    "id": 5,
-    "name": "물1",
-    "type": []
+    "id": 0,
+    "name": "돌",
+    "type": [
+      "Stone",
+      "Breakable"
+    ]
   },
   {
-    "id": 6,
-    "name": "물2",
-    "type": []
-  },
-  null,
-  null,
-  null
+    "id": 0,
+    "name": "돌",
+    "type": [
+      "Stone",
+      "Breakable"
+    ]
+  }
 ]

@@ -6,7 +6,7 @@ import blocks.BlockManager;
 import javax.swing.*;
 import java.awt.*;
 
-public class GamePanel extends MainPanel implements Runnable{
+public class GamePanel extends JPanel implements Runnable{
 
 
 	public int asdf = 0;
@@ -24,8 +24,8 @@ public class GamePanel extends MainPanel implements Runnable{
 	public final int maxScreenRow = 12;
 
 
-	public final int screenMultiX = 2;
-	public final int screenMultiY = 2;
+	public final int screenMultiX = 1;
+	public final int screenMultiY = 1;
 
 
 	public final int maxWorldCol = 60;
@@ -76,9 +76,6 @@ public class GamePanel extends MainPanel implements Runnable{
 
 
 	public GamePanel() {
-
-		super.titlePanel.setVisible(false);
-		super.startBtnPanel.setVisible(false);
 
 
 		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -152,7 +149,7 @@ public class GamePanel extends MainPanel implements Runnable{
 
 	public void paintComponent(Graphics g) {
 
-		
+
 		super.paintComponent(g);
 
 		Graphics2D g2d = (Graphics2D) g;
@@ -185,4 +182,3 @@ public class GamePanel extends MainPanel implements Runnable{
 
 	}
 }
-
