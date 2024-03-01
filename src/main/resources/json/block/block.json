@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "돌",
-    "imagePath": "item/block/.png",
+    "imagePath": "item/block/stone.png",
     "type": [
       "Stone",
       "Breakable"
@@ -11,38 +11,40 @@
   {
     "id": 1,
     "name": "벽돌1",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/brick1.png",
     "type": [
-      "brick",
+      "Brick",
       "Breakable"
     ]
   },
   {
     "id": 2,
     "name": "벽돌2",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/brick2.png",
     "type": [
-      "brick",
+      "Brick",
       "Breakable"]
   },
   {
     "id": 3,
     "name": "잔디",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/grass.png",
     "type": [
-      "dirt",
+      "Dirt",
       "Breakable"]
   },
   {
     "id": 4,
-    "name": "나무",
-    "imagePath":  "item/block/.png",
-    "type": []
+    "name": "흙",
+    "imagePath":  "item/block/dirt.png",
+    "type": [
+      "Dirt", "Breakable"
+    ]
   },
   {
     "id": 5,
     "name": "Barrier",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/barrier.png",
     "type": [
       "UnBreakable"
     ]
@@ -50,33 +52,41 @@
   {
     "id": 6,
     "name": "바다1",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/ocean.png",
     "type": [
-      "water", "UnBreakable"
+      "Water", "UnBreakable"
     ]
   },
   {
     "id": 7,
     "name": "바다2",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/ocean2.png",
     "type": [
-      "water", "UnBreakable"
+      "Water", "UnBreakable"
     ]
   },
   {
     "id": 8,
     "name": "바다3",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/ocean3.png",
     "type": [
-      "water", "UnBreakable"
+      "Water", "UnBreakable"
     ]
   },
   {
     "id": 9,
     "name": "심해",
-    "imagePath":  "item/block/.png",
+    "imagePath":  "item/block/deepOcean.png",
     "type": [
-      "water", "UnBreakable"
+      "Water", "UnBreakable"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "물",
+    "imagePath": "item/block/water.png",
+    "type": [
+      "Water"
     ]
   }
 ]
