@@ -52,7 +52,7 @@ public class MainPanel extends JPanel {
 
 
 
-		startButton = new JButton("C 받기");
+		startButton = new JButton("START");
 		startButton.setFont(mediumFont);
 		startButton.setBackground(Color.red);
 		startButton.setForeground(Color.yellow);
@@ -85,7 +85,8 @@ public class MainPanel extends JPanel {
 
 
 
-		window.setTitle(Information.GAME_NAME);
+		window.setTitle(Information.GAME_NAME); //적색 윈도우
+
 		titleScreenHandler = new TitleScreenHandler();
 
 		Panel();
@@ -105,20 +106,24 @@ public class MainPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			window.setVisible(false);
 
+
+			window.setResizable(false);
+
+			window.setTitle("MainCraft");
+
+			window.pack();
+
+			window.setLocationRelativeTo(null);
+
+			window.setVisible(true);
+
 			gs = new GamePanel();
+			window.add(gs);
 			gs.startGameThread();
 		}
 
 	}
 
-	public void setFontForAllButtons(Container container, Font font) {
-		for (Component component : container.getComponents()) {
-			if (component instanceof JButton) {
-				((JButton) component).setFont(font);
-			} else if (component instanceof Container) {
-				setFontForAllButtons((Container) component, font);
-			}
-		}
-	}
+
 }
 

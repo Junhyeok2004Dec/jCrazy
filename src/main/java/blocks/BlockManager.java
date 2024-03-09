@@ -26,8 +26,7 @@ public class BlockManager implements Data {
 
 	GamePanel gamePanel;
 	Gson gson;
-
-	ArrayList<Block> block;
+	Block[] block;
 
 	int mapTileNum[][];
 
@@ -39,7 +38,7 @@ public class BlockManager implements Data {
 	public BlockManager(GamePanel gp) {
 		this.gamePanel = gp;
 
-		block = new ArrayList<>();
+		block = new Block[10];
 
 		mapTileNum = new int [gamePanel.maxWorldCol][gamePanel.maxWorldRow];
 		getBlockImage();
@@ -49,6 +48,9 @@ public class BlockManager implements Data {
 
 	}
 
+
+
+	@Test
 	public void getBlockImage() {
 
 
@@ -59,46 +61,10 @@ public class BlockManager implements Data {
 
 
 
-			block.add(new Block(0, "돌", new ArrayList<>(Arrays.asList(
+			block[0] = new Block(0, "돌", new ArrayList<>(Arrays.asList(
 					"Stone", "Breakable"
-			))));
-			block.get(0).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(1, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(1).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(2, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(2).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(3, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(3).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(3, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(0).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(0, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(0).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(0, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(0).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
+			)));
+			block[0].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
 
 
 
@@ -121,8 +87,6 @@ public class BlockManager implements Data {
 			block[5] = new Block(5, "물1", type.getTypes());
 			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/ocean.png"));
 
-			block[6] = new Block(6, "물2", type.getTypes());
-			block[6].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/ocean2.png"));
 
 
 
@@ -154,6 +118,8 @@ public class BlockManager implements Data {
 
 
 
+
+	@Test
 	public void mapgen(Graphics2D g2d) {
 
 
