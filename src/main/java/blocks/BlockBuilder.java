@@ -5,20 +5,31 @@ import java.util.ArrayList;
 public class BlockBuilder {
 	private int id;
 	private String name;
+	private String imagePath;
+
 	private ArrayList<Type> blockType;
 
-	public BlockBuilder setID (int id) {
+	public BlockBuilder ID (int id) {
 		this.id = id;
 		return this;
 	}
 
-	public BlockBuilder setName (String name) {
+	public BlockBuilder Image (String path) {
+		this.imagePath = imagePath;
+		return this;
+	}
+
+	public BlockBuilder Name (String name) {
 		this.name = name;
 		return this;
 	}
 
-	public BlockBuilder setType (Type type) {
+	public BlockBuilder Type (Type type) {
 		this.blockType.add(type);
 		return this;
+	}
+
+	public Block build() {
+		return new Block(id, name, blockType, imagePath);
 	}
 }

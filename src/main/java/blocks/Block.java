@@ -11,12 +11,14 @@ public class Block<T> {
 
 
 
+
 	public transient BufferedImage image;
 	// Constructor
-	public Block(int id, String name, ArrayList<Type> type) {
+	public Block(int id, String name, ArrayList<Type> type, String imagePath) {
 		this.id = id;
 		this.name = name;
-		this.imagePath = "";
+		this.type = type;
+		this.imagePath = imagePath;
 	}
 
 	public Block() {

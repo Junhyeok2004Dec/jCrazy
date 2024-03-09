@@ -33,6 +33,8 @@ public class MapGen implements Data {
 
 	WorldGen wgen = new WorldGen();
 
+	Reader reader;
+
 
 
 	public MapGen(GamePanel gp) {
@@ -51,12 +53,23 @@ public class MapGen implements Data {
 	public void getBlockImage() {
 
 
+		String loadPath = "src/main/resources/json/block/block.json";
 
 
-		try {
+		try (Reader reader = Files.newBufferedReader(Path.of(loadPath), StandardCharsets.UTF_8)){
+
+			gson = new Gson();
 
 
-
+			//임시
+			for (int i = 0; i < 9; i++) {
+				block.add(
+						new BlockBuilder().Name(
+								gson.fromJson(reader, Block.class)
+						)
+				)
+			} // TODO 여기 부분, JSON 읽고 block(arraylist)에 각 block별로 add할 것. GSON
+/*
 
 			block.add(new Block(0, "돌", new ArrayList<>(Arrays.asList(
 					"Stone", "Breakable"
@@ -99,31 +112,7 @@ public class MapGen implements Data {
 			))));
 			block.get(6).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
 
-
-
-			block[1] = new Block(1,"벽돌1", type.getTypes());
-			block[1].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/brick1.png"));
-
-
-
-			block[2] = new Block(2, "벽돌2", type.getTypes());
-			block[2].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/brick2.png"));
-
-
-			block[3] = new Block(3, "잔디", type.getTypes());
-			block[3].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/grass.png"));
-
-
-			block[4] = new Block(4, "방호벽", type.getTypes());
-			block[4].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/barrier.png"));
-
-			block[5] = new Block(5, "물1", type.getTypes());
-			block[5].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/ocean.png"));
-
-			block[6] = new Block(6, "물2", type.getTypes());
-			block[6].image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/ocean2.png"));
-
-
+*/
 
 
 		} catch (IOException e) {
