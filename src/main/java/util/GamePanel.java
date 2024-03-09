@@ -1,7 +1,7 @@
 package util;
 
 import entity.player.Player;
-import blocks.BlockManager;
+import blocks.MapGen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,7 +45,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int cameraPosY = 0;
 
 
-	BlockManager blockManager = new BlockManager(this);
+	MapGen blockManager = new MapGen(this);
 
 	util.KeyHandler keyHandler = new util.KeyHandler(this);
 	Thread gameThread;

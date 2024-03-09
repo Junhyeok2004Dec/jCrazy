@@ -22,7 +22,7 @@ import java.util.List;
 
 import static information.Data.mapPath;
 
-public class BlockManager implements Data {
+public class MapGen implements Data {
 
 	GamePanel gamePanel;
 	Gson gson;
@@ -33,10 +33,9 @@ public class BlockManager implements Data {
 
 	WorldGen wgen = new WorldGen();
 
-	Type type = new Type();
 
 
-	public BlockManager(GamePanel gp) {
+	public MapGen(GamePanel gp) {
 		this.gamePanel = gp;
 
 		block = new ArrayList<>();
