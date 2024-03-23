@@ -4,55 +4,96 @@
     "name": "돌",
     "type": [
       "Stone",
-      "Breakable"
-    ]
+      null
+    ],
+    "imagePath": "item/block/stone.png"
   },
   {
     "id": 1,
-    "name": "돌",
+    "name": "벽돌1",
     "type": [
-      "Stone",
-      "Breakable"
-    ]
+      "Brick",
+      null
+    ],
+    "imagePath": "item/block/brick1.png"
   },
   {
     "id": 2,
-    "name": "돌",
+    "name": "벽돌2",
     "type": [
-      "Stone",
-      "Breakable"
-    ]
+      "Brick",
+      null
+    ],
+    "imagePath": "item/block/brick2.png"
   },
   {
     "id": 3,
-    "name": "돌",
+    "name": "잔디",
     "type": [
-      "Stone",
-      "Breakable"
-    ]
+      "Dirt",
+      null
+    ],
+    "imagePath": "item/block/grass.png"
   },
   {
-    "id": 3,
-    "name": "돌",
+    "id": 4,
+    "name": "흙",
     "type": [
-      "Stone",
-      "Breakable"
-    ]
+      "Dirt",
+      null
+    ],
+    "imagePath": "item/block/dirt.png"
   },
   {
-    "id": 0,
-    "name": "돌",
+    "id": 5,
+    "name": "Barrier",
     "type": [
-      "Stone",
-      "Breakable"
-    ]
+      null
+    ],
+    "imagePath": "item/block/barrier.png"
   },
   {
-    "id": 0,
-    "name": "돌",
+    "id": 6,
+    "name": "바다1",
     "type": [
-      "Stone",
-      "Breakable"
-    ]
+      "Water",
+      null
+    ],
+    "imagePath": "item/block/ocean.png"
+  },
+  {
+    "id": 7,
+    "name": "바다2",
+    "type": [
+      "Water",
+      null
+    ],
+    "imagePath": "item/block/ocean2.png"
+  },
+  {
+    "id": 8,
+    "name": "바다3",
+    "type": [
+      "Water",
+      null
+    ],
+    "imagePath": "item/block/ocean3.png"
+  },
+  {
+    "id": 9,
+    "name": "심해",
+    "type": [
+      "Water",
+      null
+    ],
+    "imagePath": "item/block/deepOcean.png"
+  },
+  {
+    "id": 10,
+    "name": "물",
+    "type": [
+      "Water"
+    ],
+    "imagePath": "item/block/water.png"
   }
 ]

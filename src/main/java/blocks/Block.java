@@ -10,7 +10,9 @@ public class Block<T> {
 	private String imagePath;
 
 
-
+	public String getImagePath() {
+		return imagePath;
+	}
 
 	public transient BufferedImage image;
 	// Constructor

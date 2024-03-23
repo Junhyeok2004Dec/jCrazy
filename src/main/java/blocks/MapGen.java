@@ -56,18 +56,31 @@ public class MapGen implements Data {
 		String loadPath = "src/main/resources/json/block/block.json";
 
 
-		try (Reader reader = Files.newBufferedReader(Path.of(loadPath), StandardCharsets.UTF_8)){
+
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(loadPath), "UTF-8"))) {
+			StringBuilder jsonStringBuilder = new StringBuilder();
+			String line;
+			while ((line = reader.readLine()) != null) {
+				jsonStringBuilder.append(line);
+			}
+
 
 			gson = new Gson();
 
+			Block[] blockArray = gson.fromJson(jsonStringBuilder.toString(), Block[].class);
 
-			//임시
-			for (int i = 0; i < 9; i++) {
-				block.add(
-						new BlockBuilder().Name(
-								gson.fromJson(reader, Block.class)
-						)
-				)
+
+			Block lastelement;
+			for (Block blockElement : blockArray) {
+				block.add(blockElement);
+				lastelement = block.stream().reduce((first, second) -> second).orElse(null);
+
+				lastelement.image = (ImageIO.read(
+						getClass().getClassLoader().getResourceAsStream(lastelement.getImagePath())));
+
+
+			}
+
 			} // TODO 여기 부분, JSON 읽고 block(arraylist)에 각 block별로 add할 것. GSON
 /*
 
@@ -115,7 +128,7 @@ public class MapGen implements Data {
 */
 
 
-		} catch (IOException e) {
+		 catch (IOException e) {
 			e.printStackTrace();
 		}
 
