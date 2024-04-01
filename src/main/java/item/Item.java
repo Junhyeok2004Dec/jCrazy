@@ -16,6 +16,8 @@ public class Item {
 	private transient ArrayList attribute;
 	private int cost;
 
+	private String imagePath;
+
 
 	public transient BufferedImage image;
 
