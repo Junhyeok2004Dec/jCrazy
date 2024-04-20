@@ -3,6 +3,7 @@ package entity.player;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
@@ -10,25 +11,26 @@ import java.util.Objects;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import entity.Entity;
+import entity.EntityData;
 import util.GamePanel;
 import util.KeyHandler;
 import util.Text;
 
-public class Player extends Entity {
-
-	GamePanel gp;
-	KeyHandler kh1;
-	PlayerInventory inventory;
+public class Player implements Entity {
 
 
+	private int hp;
+	private EntityData entityData;
+	private GamePanel gp;
+	private KeyHandler kh1;
+	private PlayerInventory inventory;
 
-	public BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2, heart, halfheart, bkh1,bkh2,bkh3;
-
-	public String direction;
-
-	public final int screenX, screenY;
-
-
+	private BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2, heart, halfheart, bkh1,bkh2,bkh3;
+	private String direction;
+	private final int screenX, screenY;
+	private int SpriteCount = 0;
+	private int SpriteNumber = 1;
+	private boolean isIdle = false;
 
 	public void getPlayerImage() {
 
@@ -64,26 +66,14 @@ public class Player extends Entity {
 	}
 
 
-
-	
-
 	public Player(GamePanel gp, KeyHandler kh1) {
-
-		super("Player", 0,0, 12);
 		this.gp = gp;
 		this.kh1 = kh1;
 		this.inventory = new PlayerInventory();
-		this.init();
-
-
-		//centrePoint
-		screenX = (gp.screenWidth - gp.tileSize)/2;
-		screenY = (gp.screenHeight - gp.tileSize)/2;
-
-
+		this.screenX = (gp.screenWidth - gp.tileSize)/2;
+		this.screenY = (gp.screenHeight - gp.tileSize)/2;
 		getPlayerImage();
 	}
-
 
 
 
@@ -92,8 +82,7 @@ public class Player extends Entity {
 
 
 
-		super.setPos(100, 100);
-		super.setSpeed(2);
+		set_POSITION(100, 100);
 
 		Gson gson = new GsonBuilder().create();
 
@@ -114,13 +103,13 @@ public class Player extends Entity {
 
 
 			direction = "UP";
-			modY(super.getSpeed() * (-1));
+			modY(1);
 
 
 		}
 		if (KeyHandler.down == true) {
 			direction = "DOWN";
-			modY(super.getSpeed());
+			modY(1);
 
 
 		}
@@ -128,12 +117,12 @@ public class Player extends Entity {
 
 			direction = "RIGHT";
 
-			modX(super.getSpeed());
+			modX(1);
 		}
 		if (KeyHandler.left == true) {
 
 			direction = "LEFT";
-			modX(super.getSpeed() * (-1));
+			modX(1);
 		}
 
 
@@ -143,10 +132,10 @@ public class Player extends Entity {
 
 
 		if (KeyHandler.subtract) {
-			super.modHP(-1);
+			modHP(-1);
 		}
 		if (KeyHandler.add) {
-			super.modHP(1);
+			modHP(1);
 		}
 
 		count = 0;
@@ -170,7 +159,7 @@ public class Player extends Entity {
 			}
 
 			if (KeyHandler.exit) {
-				this.setHp(0);
+				this.setHP(0);
 
 			}
 		}
@@ -273,7 +262,7 @@ public class Player extends Entity {
 
 		gp.setColor(new Color(640401));
 
-		gp.drawString(this.getWorldX() + "," + this.getWorldY(), 200,300);
+		//gp.drawString(getWorldX() + "," + getWorldY(), 200,300);
 		gp.drawImage(image, screenX, screenY, this.gp.tileSize, this.gp.tileSize, null);
 
 
@@ -300,4 +289,76 @@ public class Player extends Entity {
 
 
 	}
+
+
+
+	@Override
+	public int get_HP() {
+		return hp;
+	}
+
+	@Override
+	public int get_SPEED() {
+		return 0;
+	}
+
+	@Override
+	public void set_POSITION(int x, int y) {
+
+	}
+
+	@Override
+	public void set_HP(int hp) {
+
+	}
+
+	@Override
+	public void set_SPEED(int amount) {
+
+	}
+
+	@Override
+	public void set_DATA(EntityData data) {
+
+	}
+
+	@Override
+	public void setHP(int hp) {
+		this.hp = hp;
+	}
+
+	@Override
+	public void modX(int var) {
+
+	}
+
+	@Override
+	public void modY(int var) {
+
+	}
+
+	public void modHP(int hp) {
+		this.hp = hp;
+	}
+
+	@Override
+	public BufferedImage getTexture() {
+		return null;
+	}
+
+	@Override
+	public void setTexture(BufferedImage texture) {
+
+	}
+
+	@Override
+	public EntityData getEntityData() {
+		return entityData;
+	}
+
+	@Override
+	public void setEntityData(EntityData data) {
+		this.entityData = data;
+	}
+
 }

@@ -7,7 +7,7 @@ import entity.Inventory;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PlayerInventory extends Inventory {
+public class    PlayerInventory extends Inventory {
 
 	private Item[][] itemsArrays;
 	private ArrayList<Item> items;

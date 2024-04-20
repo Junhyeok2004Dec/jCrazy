@@ -1,9 +1,75 @@
 package entity;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import java.util.Vector;
 
+
+
+public interface Entity {
+
+
+
+	//data
+
+
+	void setHP(int hp);
+
+	void modX(int var) ;
+		//this.x += var;
+		//modWorldX(var);
+
+
+	 void modY(int var) ;
+
+		//this.y += var;
+		//modWorldY(var);
+
+
+	 void modHP(int var) ;
+		//this.hp += var;
+
+
+
+
+
+
+
+	//
+	BufferedImage getTexture();
+	void setTexture(BufferedImage texture);
+	EntityData getEntityData();
+
+
+
+
+
+	//getter
+	int get_HP();
+	int get_SPEED();
+
+
+
+
+	// setter
+	void set_POSITION(int x, int y);
+	void set_HP(int hp);
+	void set_SPEED(int amount);
+
+
+
+
+
+
+
+
+	void set_DATA(EntityData data);
+
+	void setEntityData(EntityData data);
+}
+
+/*
 public class Entity {
 
 
@@ -12,6 +78,9 @@ public class Entity {
 	private String name;
 	private EntityData entityData;
 	private int worldX, worldY;
+
+
+
 
 	public Inventory inventory;
 
@@ -122,3 +191,4 @@ public class Entity {
 		return this.hp;
 	}
 }
+*/
