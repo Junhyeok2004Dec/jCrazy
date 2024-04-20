@@ -4,99 +4,89 @@
     "name": "돌",
     "type": [
       "Stone",
-      "Breakable"
+      null
     ],
-    "imagePath": "item/block/stone.png",
-    "isCollision": false
+    "imagePath": "item/block/stone.png"
   },
   {
     "id": 1,
     "name": "벽돌1",
     "type": [
       "Brick",
-      "Breakable"
+      null
     ],
-    "imagePath": "item/block/brick1.png",
-    "isCollision": true
+    "imagePath": "item/block/brick1.png"
   },
   {
     "id": 2,
     "name": "벽돌2",
     "type": [
       "Brick",
-      "Breakable"
+      null
     ],
-    "imagePath": "item/block/brick2.png",
-    "isCollision": true
+    "imagePath": "item/block/brick2.png"
   },
   {
     "id": 3,
     "name": "잔디",
     "type": [
       "Dirt",
-      "Breakable"
+      null
     ],
-    "imagePath": "item/block/grass.png",
-    "isCollision": false
+    "imagePath": "item/block/grass.png"
   },
   {
     "id": 4,
     "name": "흙",
     "type": [
       "Dirt",
-      "Breakable"
+      null
     ],
-    "imagePath": "item/block/dirt.png",
-    "isCollision": false
+    "imagePath": "item/block/dirt.png"
   },
   {
     "id": 5,
     "name": "Barrier",
     "type": [
-      "UnBreakable"
+      null
     ],
-    "imagePath": "item/block/barrier.png",
-    "isCollision": true
+    "imagePath": "item/block/barrier.png"
   },
   {
     "id": 6,
     "name": "바다1",
     "type": [
       "Water",
-      "UnBreakable"
+      null
     ],
-    "imagePath": "item/block/ocean.png",
-    "isCollision": false
+    "imagePath": "item/block/ocean.png"
   },
   {
     "id": 7,
     "name": "바다2",
     "type": [
       "Water",
-      "UnBreakable"
+      null
     ],
-    "imagePath": "item/block/ocean2.png",
-    "isCollision": false
+    "imagePath": "item/block/ocean2.png"
   },
   {
     "id": 8,
     "name": "바다3",
     "type": [
       "Water",
-      "UnBreakable"
+      null
     ],
-    "imagePath": "item/block/ocean3.png",
-    "isCollision": false
+    "imagePath": "item/block/ocean3.png"
   },
   {
     "id": 9,
     "name": "심해",
     "type": [
       "Water",
-      "UnBreakable"
+      null
     ],
-    "imagePath": "item/block/deepOcean.png",
-    "isCollision": false
+    "imagePath": "item/block/deepOcean.png"
   },
   {
     "id": 10,
@@ -104,7 +94,6 @@
     "type": [
       "Water"
     ],
-    "imagePath": "item/block/water.png",
-    "isCollision": false
+    "imagePath": "item/block/water.png"
   }
 ]

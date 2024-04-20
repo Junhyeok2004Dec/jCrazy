@@ -8,8 +8,6 @@ public enum Type {
 	Brick,
 	Water,
 	Lava,
-	Glass,
-	Breakable,
-	UnBreakable
+	Glass
 
 }

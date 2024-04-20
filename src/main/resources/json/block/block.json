@@ -6,8 +6,7 @@
     "type": [
       "Stone",
       "Breakable"
-    ],
-    "isCollision": false
+    ]
   },
   {
     "id": 1,
@@ -16,8 +15,7 @@
     "type": [
       "Brick",
       "Breakable"
-    ],
-    "isCollision": true
+    ]
   },
   {
     "id": 2,
@@ -25,8 +23,7 @@
     "imagePath":  "item/block/brick2.png",
     "type": [
       "Brick",
-      "Breakable"],
-    "isCollision": true
+      "Breakable"]
   },
   {
     "id": 3,
@@ -34,8 +31,7 @@
     "imagePath":  "item/block/grass.png",
     "type": [
       "Dirt",
-      "Breakable"],
-    "isCollision": false
+      "Breakable"]
   },
   {
     "id": 4,
@@ -43,8 +39,7 @@
     "imagePath":  "item/block/dirt.png",
     "type": [
       "Dirt", "Breakable"
-    ],
-    "isCollision": false
+    ]
   },
   {
     "id": 5,
@@ -52,8 +47,7 @@
     "imagePath":  "item/block/barrier.png",
     "type": [
       "UnBreakable"
-    ],
-    "isCollision": true
+    ]
   },
   {
     "id": 6,
@@ -61,8 +55,7 @@
     "imagePath":  "item/block/ocean.png",
     "type": [
       "Water", "UnBreakable"
-    ],
-    "isCollision": false
+    ]
   },
   {
     "id": 7,
@@ -70,8 +63,7 @@
     "imagePath":  "item/block/ocean2.png",
     "type": [
       "Water", "UnBreakable"
-    ],
-    "isCollision": false
+    ]
   },
   {
     "id": 8,
@@ -79,8 +71,7 @@
     "imagePath":  "item/block/ocean3.png",
     "type": [
       "Water", "UnBreakable"
-    ],
-    "isCollision": false
+    ]
   },
   {
     "id": 9,
@@ -88,8 +79,7 @@
     "imagePath":  "item/block/deepOcean.png",
     "type": [
       "Water", "UnBreakable"
-    ],
-    "isCollision": false
+    ]
   },
   {
     "id": 10,
@@ -97,7 +87,6 @@
     "imagePath": "item/block/water.png",
     "type": [
       "Water"
-    ],
-    "isCollision": false
+    ]
   }
 ]
