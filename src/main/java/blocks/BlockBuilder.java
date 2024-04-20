@@ -6,6 +6,7 @@ public class BlockBuilder {
 	private int id;
 	private String name;
 	private String imagePath;
+	private boolean isCollision = false;
 
 	private ArrayList<Type> blockType;
 
@@ -29,7 +30,12 @@ public class BlockBuilder {
 		return this;
 	}
 
+	public BlockBuilder isCollision (boolean isCollision) {
+		this.isCollision = isCollision;
+		return this;
+	}
+
 	public Block build() {
-		return new Block(id, name, blockType, imagePath);
+		return new Block(id, name, blockType, imagePath, isCollision);
 	}
 }

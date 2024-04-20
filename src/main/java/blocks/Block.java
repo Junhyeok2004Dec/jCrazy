@@ -8,6 +8,7 @@ public class Block<T> {
 	private String name;
 	private ArrayList<Type> type;
 	private String imagePath;
+	private boolean isCollision = true;
 
 
 	public String getImagePath() {
@@ -16,11 +17,12 @@ public class Block<T> {
 
 	public transient BufferedImage image;
 	// Constructor
-	public Block(int id, String name, ArrayList<Type> type, String imagePath) {
+	public Block(int id, String name, ArrayList<Type> type, String imagePath, Boolean isCollision) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.imagePath = imagePath;
+		this.isCollision = isCollision;
 	}
 
 	public Block() {

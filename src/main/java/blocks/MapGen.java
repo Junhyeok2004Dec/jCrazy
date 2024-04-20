@@ -82,50 +82,7 @@ public class MapGen implements Data {
 			}
 
 			} // TODO 여기 부분, JSON 읽고 block(arraylist)에 각 block별로 add할 것. GSON
-/*
 
-			block.add(new Block(0, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(0).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(1, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(1).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(2, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(2).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(3, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(3).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(4, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(4).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(5, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(5).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-
-			block.add(new Block(6, "돌", new ArrayList<>(Arrays.asList(
-					"Stone", "Breakable"
-			))));
-			block.get(6).image = ImageIO.read(getClass().getClassLoader().getResourceAsStream("item/block/stone.png"));
-
-*/
 
 
 		 catch (IOException e) {
@@ -133,7 +90,7 @@ public class MapGen implements Data {
 		}
 
 
-		String path = "src/main/resources/json/block/blockNew.json";
+		String path = "src/main/resources/json/block/blockNew.json";  // save address
 
 
 		try (Writer writer = Files.newBufferedWriter(Path.of(path), StandardCharsets.UTF_8)) {
