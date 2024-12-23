@@ -14,9 +14,10 @@ public class Item {
 	private int id;
 	private String name;
 
-	private String type;
+	private ItemType type;
+
 	private String lore;
-	private transient ArrayList attribute;
+	private ArrayList attribute;
 	private int cost;
 
 	private String imagePath;
