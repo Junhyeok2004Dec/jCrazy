@@ -2,9 +2,11 @@ package item;
 
 import blocks.Block;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import information.ProgramData;
 import org.junit.Test;
+import util.Attribute;
 import util.Deserialize;
 import util.GamePanel;
 
@@ -16,7 +18,7 @@ import java.util.List;
 
 import static information.ProgramData.itemLoadPath;
 
-public class ItemGen implements ProgramData {
+public class ItemGen implements ProgramData  {
 
 
 	Gson gson;
@@ -33,7 +35,6 @@ public class ItemGen implements ProgramData {
 
 		getItemImage();
 
-		System.out.println(items.get(1).toString());
 
 	}
 
@@ -56,17 +57,36 @@ public class ItemGen implements ProgramData {
 
 			Item[] itemArray = gson.fromJson(jsonStringBuilder.toString(), Item[].class);
 
+
 			for(Item itemElement: itemArray)
 			{
-				items.add(itemElement);
+
+
 				itemElement.image = (ImageIO.read(
 						getClass().getClassLoader().getResourceAsStream(itemElement.getImagePath())
 				));
-			}
+
+
+				if (itemElement.getAttribute() != null) {
+					List<Attribute> attributes = gson.fromJson(
+							gson.toJson(itemElement.getAttribute()),
+							new TypeToken<List<Attribute>>() {
+							}.getType()
+					);
+						itemElement.setAttribute(attributes);
+					}
+
+
+				items.add(itemElement);
+				}
+
+
+
 		} catch (IOException ioException) {
 			ioException.printStackTrace();
 		}
 	}
+
 
 
 }

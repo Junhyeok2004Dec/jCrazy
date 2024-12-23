@@ -1,6 +1,7 @@
 package item;
 
 import com.google.gson.Gson;
+import util.Attribute;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -8,16 +9,17 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class Item {
 
 	private int id;
 	private String name;
 
-	private ItemType type;
+	private transient ItemType itemType;
 
 	private String lore;
-	private ArrayList attribute;
+	private List<Attribute> attribute;
 	private int cost;
 
 	private String imagePath;
@@ -49,17 +51,18 @@ public class Item {
 
 	}
 
-	public void setImage(BufferedImage bufferedImage)
-	{
-		this.image = bufferedImage;
+
+
+
+	public List<Attribute> getAttribute() {
+		return attribute;
 	}
 
 
-
-	public void setImage(String path )
-	{
-		this.imagePath = path;
+	public void setAttribute(List<Attribute> attribute) {
+		this.attribute = attribute;
 	}
+
 
 	public String getImagePath()
 	{
@@ -72,7 +75,7 @@ public class Item {
 		return "Item{" +
 				"id=" + id +
 				", name='" + name + '\'' +
-				", type='" + type + '\'' +
+				", itemType='" + itemType + '\'' +
 				", lore='" + lore + '\'' +
 				", attribute=" + attribute +
 				", cost=" + cost +

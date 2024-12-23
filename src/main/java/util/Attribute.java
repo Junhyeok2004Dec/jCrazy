@@ -1,9 +1,27 @@
 package util;
 
-public abstract class Attribute {
-	// 아이템,플레이어 속성
+public class Attribute {
+	private String type;
+	private String value;
 
+	public Attribute(String type, String value) {
+		this.type = type;
+		this.value = value;
+	}
 
-	public String defaultAttri;
-	public float time;
+	public String getType() {
+		return type;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	@Override
+	public String toString() {
+		return "Attribute{" +
+				"type='" + type + '\'' +
+				", value='" + value + '\'' +
+				'}';
+	}
 }
