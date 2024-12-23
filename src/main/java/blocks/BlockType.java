@@ -2,7 +2,7 @@ package blocks;
 
 import java.util.ArrayList;
 
-public enum Type {
+public enum BlockType {
 	Stone,
 	Dirt,
 	Brick,

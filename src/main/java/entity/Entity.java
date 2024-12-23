@@ -1,5 +1,8 @@
 package entity;
 
+import util.Component;
+import util.GamePanel;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Arrays;
@@ -7,69 +10,7 @@ import java.util.Vector;
 
 
 
-public interface Entity {
 
-
-
-	//data
-
-
-	void setHP(int hp);
-
-	void modX(int var) ;
-		//this.x += var;
-		//modWorldX(var);
-
-
-	 void modY(int var) ;
-
-		//this.y += var;
-		//modWorldY(var);
-
-
-	 void modHP(int var) ;
-		//this.hp += var;
-
-
-
-
-
-
-
-	//
-	BufferedImage getTexture();
-	void setTexture(BufferedImage texture);
-	EntityData getEntityData();
-
-
-
-
-
-	//getter
-	int get_HP();
-	int get_SPEED();
-
-
-
-
-	// setter
-	void set_POSITION(int x, int y);
-	void set_HP(int hp);
-	void set_SPEED(int amount);
-
-
-
-
-
-
-
-
-	void set_DATA(EntityData data);
-
-	void setEntityData(EntityData data);
-}
-
-/*
 public class Entity {
 
 
@@ -78,7 +19,11 @@ public class Entity {
 	private String name;
 	private EntityData entityData;
 	private int worldX, worldY;
+	protected int screenX, screenY;
 
+	private EntityData entitydata;
+
+	private GamePanel gp;
 
 
 
@@ -86,8 +31,14 @@ public class Entity {
 
 
 
-	public Entity() {
+	public Entity(GamePanel gp) {
+
+		this.gp = gp;
+		this.screenX = (gp.screenWidth - gp.tileSize)/2;
+		this.screenY = (gp.screenHeight - gp.tileSize)/2;
 	}
+
+
 
 	public Entity(String name, int x, int y, int hp) {
 		this.x = x;
@@ -96,6 +47,11 @@ public class Entity {
 		this.speed = 1;
 		this.name = name;
 		this.inventory = new Inventory();
+		this.entitydata = new EntityData();
+
+
+		this.screenX = (gp.screenWidth - gp.tileSize)/2;
+		this.screenY = (gp.screenHeight - gp.tileSize)/2;
 	}
 
 
@@ -118,16 +74,20 @@ public class Entity {
 
 
 
+
+
 	public void modX(int var) {
-		 this.x += var;
-		 modWorldX(var);
+		 //this.x += var;
+		 modWorldPosition(var, 0);
 	}
 
 	public void modY(int var) {
 
-		this.y += var;
-		modWorldY(var);
+		//this.y += var;
+		modWorldPosition(0, var);
 	}
+
+
 
 	public void modHP(int var) {
 		this.hp += var;
@@ -159,24 +119,18 @@ public class Entity {
 		return speed;
 	}
 
-	@Override
-	public String toString() {
-		return
-				"[" + this.name + "," +
-						this.x + "," + this.y + ","
-						+ this.name + "," + this.speed + "]" ;
 
-
+	public void modWorldPosition(int x, int y) {
+		this.worldX += x;
+		this.worldY += y;
 	}
 
-
-
-	public void modWorldX(int var) {
-		this.worldX += var;
+	public int getScreenX() {
+		return screenX;
 	}
 
-	public void modWorldY(int var) {
-		this.worldY += var;
+	public int getScreenY() {
+		return screenY;
 	}
 
 	public int getWorldX() {
@@ -190,5 +144,14 @@ public class Entity {
 	public int getHP() {
 		return this.hp;
 	}
+
+
+	@Override
+	public String toString() {
+		return
+				"[" + this.name + "," +
+						this.x + "," + this.y + ","
+						+ this.name + "," + this.speed + "]" ;
+
+	}
 }
-*/

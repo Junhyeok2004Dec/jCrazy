@@ -30,7 +30,9 @@ public class ItemManager {
             itemList.get(0).image =
                     ImageIO.read(getClass().getClassLoader().getResourceAsStream(
                             "item/block/barrier.png"
-                    ));
+                    )
+
+                    );
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         } finally {

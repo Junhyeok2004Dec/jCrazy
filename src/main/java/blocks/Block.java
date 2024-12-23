@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Block<T> {
 	private int id;
 	private String name;
-	private ArrayList<Type> type;
+	private ArrayList<BlockType> blockType;
 	private String imagePath;
 
 
@@ -16,10 +16,10 @@ public class Block<T> {
 
 	public transient BufferedImage image;
 	// Constructor
-	public Block(int id, String name, ArrayList<Type> type, String imagePath) {
+	public Block(int id, String name, ArrayList<BlockType> type, String imagePath) {
 		this.id = id;
 		this.name = name;
-		this.type = type;
+		this.blockType = type;
 		this.imagePath = imagePath;
 	}
 
@@ -45,7 +45,7 @@ public class Block<T> {
 
 	@Override
 	public String toString() {
-		return "[" + this.id + "," + this.name + "," + this.type + "," + this.imagePath + "]";
+		return "[" + this.id + "," + this.name + "," + this.blockType + "," + this.imagePath + "]";
 	}
 
 }

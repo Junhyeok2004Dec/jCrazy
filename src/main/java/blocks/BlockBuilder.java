@@ -7,7 +7,7 @@ public class BlockBuilder {
 	private String name;
 	private String imagePath;
 
-	private ArrayList<Type> blockType;
+	private ArrayList<BlockType> blockType;
 
 	public BlockBuilder ID (int id) {
 		this.id = id;
@@ -24,7 +24,7 @@ public class BlockBuilder {
 		return this;
 	}
 
-	public BlockBuilder Type (Type type) {
+	public BlockBuilder Type (BlockType type) {
 		this.blockType.add(type);
 		return this;
 	}

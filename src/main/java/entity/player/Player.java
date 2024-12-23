@@ -16,7 +16,7 @@ import util.GamePanel;
 import util.KeyHandler;
 import util.Text;
 
-public class Player implements Entity {
+public class Player extends Entity {
 
 
 	private int hp;
@@ -27,7 +27,6 @@ public class Player implements Entity {
 
 	private BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2, heart, halfheart, bkh1,bkh2,bkh3;
 	private String direction;
-	private final int screenX, screenY;
 	private int SpriteCount = 0;
 	private int SpriteNumber = 1;
 	private boolean isIdle = false;
@@ -67,11 +66,10 @@ public class Player implements Entity {
 
 
 	public Player(GamePanel gp, KeyHandler kh1) {
+		super(gp);
 		this.gp = gp;
 		this.kh1 = kh1;
 		this.inventory = new PlayerInventory();
-		this.screenX = (gp.screenWidth - gp.tileSize)/2;
-		this.screenY = (gp.screenHeight - gp.tileSize)/2;
 		getPlayerImage();
 	}
 
@@ -82,7 +80,7 @@ public class Player implements Entity {
 
 
 
-		set_POSITION(100, 100);
+		setPos(100, 100);
 
 		Gson gson = new GsonBuilder().create();
 
@@ -103,7 +101,7 @@ public class Player implements Entity {
 
 
 			direction = "UP";
-			modY(1);
+			modY(-1);
 
 
 		}
@@ -122,7 +120,7 @@ public class Player implements Entity {
 		if (KeyHandler.left == true) {
 
 			direction = "LEFT";
-			modX(1);
+			modX(-1);
 		}
 
 
@@ -159,21 +157,12 @@ public class Player implements Entity {
 			}
 
 			if (KeyHandler.exit) {
-				this.setHP(0);
+				this.setHp(0);
 
 			}
 		}
 
-
-
-
-
-
 	}
-
-	Text text = new Text();
-
-
 
 
 	public void draw(Graphics2D gp) {
@@ -255,18 +244,12 @@ public class Player implements Entity {
 
 		}
 
-
-
-
 		gp.setFont(new Font("바탕", 20, 20));
 
 		gp.setColor(new Color(640401));
 
 		//gp.drawString(getWorldX() + "," + getWorldY(), 200,300);
-		gp.drawImage(image, screenX, screenY, this.gp.tileSize, this.gp.tileSize, null);
-
-
-
+		gp.drawImage(image, super.getScreenX(), super.getScreenY(), this.gp.tileSize, this.gp.tileSize, null);
 
 
 		//Health 코드 정리예정.
@@ -292,48 +275,42 @@ public class Player implements Entity {
 
 
 
+
+
+
 	@Override
-	public int get_HP() {
-		return hp;
+	public int getHP() {
+		return this.hp;
 	}
 
-	@Override
-	public int get_SPEED() {
-		return 0;
-	}
+
+
 
 	@Override
-	public void set_POSITION(int x, int y) {
-
-	}
-
-	@Override
-	public void set_HP(int hp) {
+	public void setSpeed(int amount) {
 
 	}
 
-	@Override
-	public void set_SPEED(int amount) {
 
-	}
 
-	@Override
-	public void set_DATA(EntityData data) {
 
-	}
+
 
 	@Override
-	public void setHP(int hp) {
+	public void setHp(int hp)
+	{
 		this.hp = hp;
 	}
 
 	@Override
 	public void modX(int var) {
+		super.modX(var);
 
 	}
 
 	@Override
 	public void modY(int var) {
+		super.modY(var);
 
 	}
 
@@ -341,24 +318,13 @@ public class Player implements Entity {
 		this.hp = hp;
 	}
 
-	@Override
 	public BufferedImage getTexture() {
 		return null;
 	}
 
-	@Override
+
 	public void setTexture(BufferedImage texture) {
 
-	}
-
-	@Override
-	public EntityData getEntityData() {
-		return entityData;
-	}
-
-	@Override
-	public void setEntityData(EntityData data) {
-		this.entityData = data;
 	}
 
 }

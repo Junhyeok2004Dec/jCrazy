@@ -181,12 +181,12 @@ public class MapGen implements Data {
 				int worldX = col * gamePanel.tileSize;
 				int worldY = Row * gamePanel.tileSize;
 
-				int screenX = worldX - gamePanel.player.getWorldX() + gamePanel.player.screenX;
-				int screenY = worldY - gamePanel.player.getWorldY() + gamePanel.player.screenY;
+				int screenX = worldX - gamePanel.player.getWorldX() + gamePanel.player.getScreenX();
+				int screenY = worldY - gamePanel.player.getWorldY() + gamePanel.player.getScreenY();
 
 
-					g2d.drawImage(block.get(wgen.getData(col, Row)).image,
-							screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
+				g2d.drawImage(block.get(wgen.getData(col, Row)).image,
+						screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
 
 
 					mapTileNum[col][Row] = wgen.getData(col,Row);
