@@ -9,7 +9,7 @@ public class Text {
 	GamePanel gamePanel;
 
 
-	public String drawText = "";
+	public String drawText = "으하하123123wr";
 	int x,y;
 
 	public void setText(String text) {

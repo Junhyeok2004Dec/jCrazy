@@ -9,21 +9,24 @@
     "type": "물약",
     "healType": "immediately",
     "healAmount": 10,
-    "cost": 50
+    "cost": 50,
+    "imagePath": "item/star.png"
   },
   {
     "id": 1001,
     "name": "1원",
     "lore": "1원 한국조폐공사",
     "type": "money",
-    "cost": 1
+    "cost": 1,
+    "imagePath": "item/money/1won.png"
   },
   {
     "id": 1002,
     "name": "5원",
     "lore": "5원 한국조폐공사",
     "type": "money",
-    "cost": 5
+    "cost": 5,
+    "imagePath": "item/money/5won.png"
   }
 
 ]

@@ -2,6 +2,8 @@ package util;
 
 import entity.player.Player;
 import blocks.MapGen;
+import item.Item;
+import item.ItemGen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,14 +47,26 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int cameraPosY = 0;
 
 
+
+	// MapGen 관련 선언
 	MapGen blockManager = new MapGen(this);
 
+
+	// KeyHandler 선언
 	util.KeyHandler keyHandler = new util.KeyHandler(this);
+
+	// Gamethread 선언
 	Thread gameThread;
 
 
+	// player 선언
+
 	public Player player = new Player(this, keyHandler);
 	util.Text text = new util.Text();
+
+	ItemGen itemGen = new ItemGen();
+
+
 
 
 	int fps = 240;

@@ -2,7 +2,7 @@ package blocks;
 
 
 
-import information.Data;
+import information.ProgramData;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class WorldGen implements Data {
+public class WorldGen implements ProgramData {
 
 
 

@@ -11,8 +11,9 @@ import java.util.HashMap;
 
 public class Item {
 
-	private String name;
 	private int id;
+	private String name;
+
 	private String type;
 	private String lore;
 	private transient ArrayList attribute;
@@ -23,7 +24,6 @@ public class Item {
 
 	public transient BufferedImage image;
 
-	private String jsonPath;
 	public Item() {
 
 	}
@@ -48,17 +48,34 @@ public class Item {
 
 	}
 
-
-
-	public void setPath(String path )
+	public void setImage(BufferedImage bufferedImage)
 	{
-		this.jsonPath = path;
+		this.image = bufferedImage;
 	}
 
 
 
+	public void setImage(String path )
+	{
+		this.imagePath = path;
+	}
+
+	public String getImagePath()
+	{
+		return this.imagePath;
+	}
 
 
-
-
+	@Override
+	public String toString() {
+		return "Item{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", type='" + type + '\'' +
+				", lore='" + lore + '\'' +
+				", attribute=" + attribute +
+				", cost=" + cost +
+				", imagePath='" + imagePath + '\'' +
+				'}';
+	}
 }

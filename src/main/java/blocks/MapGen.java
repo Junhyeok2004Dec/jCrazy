@@ -17,10 +17,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static information.Data.mapPath;
+import static information.ProgramData.blockLoadPath;
 
 public class MapGen implements Data {
 
@@ -53,11 +52,11 @@ public class MapGen implements Data {
 	public void getBlockImage() {
 
 
-		String loadPath = "src/main/resources/json/block/block.json";
 
 
 
-		try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(loadPath), "UTF-8"))) {
+
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(blockLoadPath), "UTF-8"))) {
 			StringBuilder jsonStringBuilder = new StringBuilder();
 			String line;
 			while ((line = reader.readLine()) != null) {
@@ -70,15 +69,10 @@ public class MapGen implements Data {
 			Block[] blockArray = gson.fromJson(jsonStringBuilder.toString(), Block[].class);
 
 
-			Block lastelement;
 			for (Block blockElement : blockArray) {
 				block.add(blockElement);
-				lastelement = block.stream().reduce((first, second) -> second).orElse(null);
-
-				lastelement.image = (ImageIO.read(
-						getClass().getClassLoader().getResourceAsStream(lastelement.getImagePath())));
-
-
+				blockElement.image = (ImageIO.read(
+						getClass().getClassLoader().getResourceAsStream(blockElement.getImagePath())));
 			}
 
 			} // TODO 여기 부분, JSON 읽고 block(arraylist)에 각 block별로 add할 것. GSON
@@ -207,8 +201,6 @@ public class MapGen implements Data {
 
 		}
 
-
-	@Test
 	public Block createObjFromJson(String path) {
 
 
