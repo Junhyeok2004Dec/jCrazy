@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
-import util.Deserialize;
 import util.GamePanel;
 
 import javax.imageio.ImageIO;

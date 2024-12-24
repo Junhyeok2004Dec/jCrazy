@@ -3,9 +3,16 @@ package item;
 import blocks.BlockType;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-public class ItemBuilder {
+public class PotionBuilder extends ItemBuilder {
 
+
+	//potion
+	private float duration;
+	private int amount;
+	private PotionType potionType;
 
 	private int id;
 	private String name;
@@ -14,8 +21,6 @@ public class ItemBuilder {
 	private int cost;
 
 	private String imagePath;
-
-	private ArrayList<ItemType> attribute;
 
 
 
@@ -36,15 +41,17 @@ public class ItemBuilder {
 		return this;
 	}
 
-	public ItemBuilder Type (ItemType type) {
-		this.attribute.add(type);
+	public ItemBuilder Lore (String lore) {
+		this.lore = lore;
 		return this;
 	}
 
 
 
+
+
 	public Item build() {
-		return new Item(id, name, lore, attribute, cost);
+		return new Potion(id, name, lore, new ArrayList<>(Arrays.asList(potionType)), cost, amount, duration);
 	}
 
 }

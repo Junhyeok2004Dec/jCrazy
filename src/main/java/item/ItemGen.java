@@ -1,22 +1,15 @@
 package item;
 
-import blocks.Block;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import information.ProgramData;
 import org.junit.Test;
 import util.Attribute;
-import util.Deserialize;
-import util.GamePanel;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import static information.ProgramData.itemLoadPath;
 
 public class ItemGen implements ProgramData  {
 
