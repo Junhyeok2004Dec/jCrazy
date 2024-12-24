@@ -29,7 +29,7 @@ public class BlockBuilder {
 		return this;
 	}
 
-	public Block build() {
+	Block build() {
 		return new Block(id, name, blockType, imagePath);
 	}
 }

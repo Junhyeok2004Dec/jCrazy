@@ -27,6 +27,8 @@ public class Player extends Entity {
 
 	private BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2, heart, halfheart, bkh1,bkh2,bkh3;
 	private String direction;
+
+	private boolean openInventory;
 	private int SpriteCount = 0;
 	private int SpriteNumber = 1;
 	private boolean isIdle = false;
@@ -95,50 +97,35 @@ public class Player extends Entity {
 
 	public void update() {
 
-
-
+		if (KeyHandler.inventory == true) {
+			openInventory = true;
+		} else openInventory = false;
 		if (KeyHandler.up == true) {
-
-
 			direction = "UP";
 			modY(-1);
-
-
 		}
 		if (KeyHandler.down == true) {
 			direction = "DOWN";
 			modY(1);
-
-
 		}
 		if (KeyHandler.right == true) {
-
 			direction = "RIGHT";
-
 			modX(1);
 		}
 		if (KeyHandler.left == true) {
-
 			direction = "LEFT";
 			modX(-1);
 		}
-
-
 		SpriteCount++;
 
 		count++;
-
-
 		if (KeyHandler.subtract) {
 			modHP(-1);
 		}
 		if (KeyHandler.add) {
 			modHP(1);
 		}
-
 		count = 0;
-
-
 		if(SpriteCount > 24) {
 
 
@@ -166,7 +153,9 @@ public class Player extends Entity {
 
 
 	public void draw(Graphics2D gp) {
-		
+
+
+		inventory.draw(gp);
 		BufferedImage image = null;
 
 		switch(direction)
@@ -215,34 +204,8 @@ public class Player extends Entity {
 
 
 
-
-		if(isIdle) {
-
-			int idlecount = 0;
-
-			if(isIdle) {
-				idlecount++;
-
-				if(idlecount > 32) {
-
-					if((image == down2)||(image == down1)) {
-						image = idle1;
-					}
-
-					if(image == idle1) {
-						image = idle2;
-					} else if (image == idle2) {
-						image = idle1;
-					}
-
-
-				}
-
-			}
-
-
-
-		}
+		if(openInventory)		inventory.inventoryOpen();
+		else                    inventory.inventoryClose();
 
 		gp.setFont(new Font("바탕", 20, 20));
 
@@ -250,6 +213,7 @@ public class Player extends Entity {
 
 		//gp.drawString(getWorldX() + "," + getWorldY(), 200,300);
 		gp.drawImage(image, super.getScreenX(), super.getScreenY(), this.gp.tileSize, this.gp.tileSize, null);
+
 
 
 		//Health 코드 정리예정.

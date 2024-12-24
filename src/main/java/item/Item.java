@@ -25,6 +25,7 @@ public class Item {
 	private String imagePath;
 
 
+	public transient ArrayList<Item> itemList;
 	public transient BufferedImage image;
 
 	public Item() {

@@ -2,6 +2,7 @@ package util;
 
 import entity.player.Player;
 import blocks.MapGen;
+import entity.player.PlayerInventory;
 import item.Item;
 import item.ItemGen;
 
@@ -68,24 +69,15 @@ public class GamePanel extends JPanel implements Runnable{
 
 
 
-
 	int fps = 240;
 
-
-
 	/*
-
-
 	메인화면 구현
 
 
 	1. 첫 init 이후 메인화면 draw(기본 화면)
 	2. if press key(space) -> 다음 scene으로 넘어감(현 메인화면 zindex 우선순위 하락)
 	3. 메인화면의 zindex를 바꾸는 식
-
-
-
-
 	 */
 
 
@@ -174,6 +166,7 @@ public class GamePanel extends JPanel implements Runnable{
 		blockManager.mapgen(g2d);
 		player.draw(g2d);
 		text.draw(g2d);
+
 
 
 		g2d.dispose();

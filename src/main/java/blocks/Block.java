@@ -3,7 +3,7 @@ package blocks;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class Block<T> {
+public class Block {
 	private int id;
 	private String name;
 	private ArrayList<BlockType> blockType;

@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 public class KeyHandler implements KeyListener {
 
 
-	public static boolean up, down, right, left, exit, add, subtract;
+	public static boolean up, down, right, left, exit, add, subtract, inventory;
 	GamePanel gp;
 
 
@@ -39,6 +39,9 @@ public class KeyHandler implements KeyListener {
 
 		switch (code) {
 
+			case KeyEvent.VK_E:
+				inventory = true;
+				break;
 			case KeyEvent.VK_W:
 				up = true;
 				break;
@@ -85,7 +88,9 @@ public class KeyHandler implements KeyListener {
 		int code = e.getKeyCode();
 
 		switch (code) {
-
+			case KeyEvent.VK_E:
+				inventory = false;
+				break;
 			case KeyEvent.VK_W:
 				up = false;
 				break;

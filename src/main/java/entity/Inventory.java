@@ -15,17 +15,6 @@ public class Inventory {
 		this.items = new ArrayList<>();
 	}
 
-	public void playerInventory(int width, int height) {
-		this.items = new ArrayList<>();
-
-
-		for(int i = 0; i < width * height; i++) {
-			this.items.add(new Item("air"));
-		}
-
-
-
-	}
 
 	public void addItem(Item item) {
 		this.items.add(item);

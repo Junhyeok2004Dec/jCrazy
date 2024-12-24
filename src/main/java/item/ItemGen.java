@@ -23,8 +23,8 @@ public class ItemGen implements ProgramData  {
 
 	Gson gson;
 
-	ArrayList<Item> items;
-
+	public static ArrayList<Item> items;
+	Item item;
 
 
 
@@ -34,6 +34,7 @@ public class ItemGen implements ProgramData  {
 		items = new ArrayList<>();
 
 		getItemImage();
+		item = new Item();
 
 
 	}
