@@ -55,6 +55,8 @@ public class Item {
 
 
 
+
+
 	public List<Attribute> getAttribute() {
 		return attribute;
 	}
@@ -70,6 +72,14 @@ public class Item {
 		return this.imagePath;
 	}
 
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
 
 	@Override
 	public String toString() {

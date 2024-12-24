@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import static util.GamePanel.playerInventoryX;
 import static util.GamePanel.playerInventoryY;
 
-public class PlayerInventory extends Inventory {
+public class PlayerInventory  {
 
 	private Item[][] itemsArrays;
 
