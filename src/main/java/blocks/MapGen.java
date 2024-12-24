@@ -139,25 +139,6 @@ public class MapGen implements Data {
 
     }
 
-    public Block createObjFromJson(String path) {
-
-
-        String str = "";
-        Block objectBlock = new Block();
-
-        gson = new Gson();
-
-
-        try {
-            java.lang.reflect.Type parseList = new TypeToken<ArrayList<Deserialize>>() {
-            }.getType();
-            List<Deserialize> objectList = gson.fromJson(new FileReader(path), parseList);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return objectBlock;
-
-    }
 
 
 }
