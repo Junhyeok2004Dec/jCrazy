@@ -2,16 +2,14 @@ package entity.player;
 
 import item.Item;
 import item.ItemGen;
-import util.GamePanel;
+import window.GamePanel;
 import entity.Inventory;
 
 import java.awt.*;
-import java.util.ArrayList;
 
-import static util.GamePanel.playerInventoryX;
-import static util.GamePanel.playerInventoryY;
+import static window.GamePanel.playerInventoryX;
 
-public class PlayerInventory  {
+public class PlayerInventory extends Inventory{
 
 	private Item[][] itemsArrays;
 

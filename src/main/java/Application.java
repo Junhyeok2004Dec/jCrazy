@@ -1,4 +1,4 @@
-import util.GamePanel;
+import window.GamePanel;
 
 import javax.swing.*;
 import java.awt.*;

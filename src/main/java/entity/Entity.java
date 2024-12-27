@@ -1,14 +1,8 @@
 package entity;
 
-import util.Component;
-import util.GamePanel;
+import window.GamePanel;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.Arrays;
-import java.util.Vector;
-
-
 
 
 public class Entity {

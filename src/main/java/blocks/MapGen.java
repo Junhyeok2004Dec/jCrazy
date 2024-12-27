@@ -4,8 +4,7 @@ package blocks;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
-import com.google.gson.reflect.TypeToken;
-import util.GamePanel;
+import window.GamePanel;
 
 import javax.imageio.ImageIO;
 import javax.xml.crypto.Data;
@@ -15,7 +14,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
 
 import static information.ProgramData.blockLoadPath;
 

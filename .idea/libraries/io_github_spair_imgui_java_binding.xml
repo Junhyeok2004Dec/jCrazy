@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="io.github.spair.imgui.java.binding" type="repository">
+    <properties maven-id="io.github.spair:imgui-java-binding:1.87.7" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/github/spair/imgui-java-binding/1.87.7/imgui-java-binding-1.87.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -3,7 +3,6 @@ package entity.player;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
@@ -12,9 +11,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import entity.Entity;
 import entity.EntityData;
-import util.GamePanel;
+import window.GamePanel;
 import util.KeyHandler;
-import util.Text;
 
 public class Player extends Entity {
 
@@ -31,6 +29,7 @@ public class Player extends Entity {
 	private boolean openInventory;
 	private int SpriteCount = 0;
 	private int SpriteNumber = 1;
+
 	private boolean isIdle = false;
 
 	public void getPlayerImage() {

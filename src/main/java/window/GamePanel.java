@@ -1,4 +1,4 @@
-package util;
+package window;
 
 import entity.player.Player;
 import blocks.MapGen;
@@ -188,4 +188,14 @@ public class GamePanel extends JPanel implements Runnable{
 
 
 	}
+
+
+	public int getWidth() {
+		return this.screenWidth;
+	}
+
+	public int getHeight() {
+		return this.screenHeight;
+	}
+
 }

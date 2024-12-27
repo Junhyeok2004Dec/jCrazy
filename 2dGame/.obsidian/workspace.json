@@ -23,12 +23,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Entity 객체.md",
+                "file": "Entity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Entity 객체"
+              "title": "Entity"
             }
           }
         ],
@@ -175,7 +175,7 @@
   },
   "active": "6cdf7ea5fc8fe5e8",
   "lastOpenFiles": [
-    "Entity 객체.md",
+    "Entity.md",
     "Welcome.md"
   ]
 }

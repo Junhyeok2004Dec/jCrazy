@@ -20,6 +20,11 @@ sourceSets {
 }
 
 
+ext {
+    imguiVersion = "${version}"
+
+}
+
 application {
     mainClass = 'Application'
 }
@@ -32,13 +37,14 @@ dependencies {
     implementation 'junit:junit:4.13.2'
     implementation 'com.google.code.gson:gson:2.10.1'
 
+
+
     testImplementation(platform("org.junit:junit-bom:5.9.3"))
     testRuntimeOnly("org.junit.platform:junit-platform-launcher") {
         because("Only needed to run tests in a version of IntelliJ IDEA that bundles older versions")
     }
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
-
 
 
 
