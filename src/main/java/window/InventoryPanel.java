@@ -1,4 +1,4 @@
-package entity.player;
+package window;
 
 import item.Item;
 import item.ItemGen;
@@ -9,14 +9,14 @@ import java.awt.*;
 
 import static window.GamePanel.playerInventoryX;
 
-public class PlayerInventory extends Inventory{
+public class InventoryPanel extends Inventory{
 
 	private Item[][] itemsArrays;
 
 	private static final int inventoryTileSize = 32;
 	private boolean open;
 
-	public PlayerInventory() {
+	public InventoryPanel() {
 
 		open = false;
 

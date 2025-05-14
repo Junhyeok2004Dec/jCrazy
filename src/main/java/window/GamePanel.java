@@ -2,8 +2,6 @@ package window;
 
 import entity.player.Player;
 import blocks.MapGen;
-import entity.player.PlayerInventory;
-import item.Item;
 import item.ItemGen;
 
 import javax.swing.*;

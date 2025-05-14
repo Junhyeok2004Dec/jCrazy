@@ -13,6 +13,7 @@ import entity.Entity;
 import entity.EntityData;
 import window.GamePanel;
 import util.KeyHandler;
+import window.InventoryPanel;
 
 public class Player extends Entity {
 
@@ -21,7 +22,7 @@ public class Player extends Entity {
 	private EntityData entityData;
 	private GamePanel gp;
 	private KeyHandler kh1;
-	private PlayerInventory inventory;
+	private InventoryPanel inventory;
 
 	private BufferedImage up1, up2, down1, down2, right1, right2, left1, left2, idle1, idle2, heart, halfheart, bkh1,bkh2,bkh3;
 	private String direction;
@@ -70,7 +71,7 @@ public class Player extends Entity {
 		super(gp);
 		this.gp = gp;
 		this.kh1 = kh1;
-		this.inventory = new PlayerInventory();
+		this.inventory = new InventoryPanel();
 		getPlayerImage();
 	}
 
